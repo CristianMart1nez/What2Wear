@@ -1,6 +1,13 @@
 import { createBrowserRouter } from "react-router-dom";
 import { RootLayout } from "../layouts/RootLayout";
-import { AboutUsPage, HomePage, LoginPage, MyClosetsPage, MyOutfitsPage, NotFoundPage, RegisterPage } from "../pages";
+import { NotFoundPage } from "../pages/NotFoundPage/NotFoundPage";
+import { HomePage } from "../pages/HomePage/HomePage";
+import { LoginPage } from "../pages/LoginPage/LoginPage";
+import { MyClosetsPage } from "../pages/MyClosetsPage/MyClosetsPage";
+import { MyOutfitsPage } from "../pages/MyOutfitsPage/MyOutfitsPage";
+import { RegisterPage } from "../pages/RegisterPage/RegisterPage";
+import { AboutUsPage } from "../pages/AboutUsPage/AboutUsPage";
+
 
 export const router = createBrowserRouter([
     {

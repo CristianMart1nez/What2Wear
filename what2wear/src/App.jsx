@@ -1,5 +1,5 @@
 import { RouterProvider } from "react-router-dom";
-import { HomePage } from "./pages";
+import { HomePage } from "./pages/HomePage/HomePage";
 import { router } from "./router";
 import "./App.css";
 

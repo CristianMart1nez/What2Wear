@@ -1,4 +1,4 @@
-const { DataTypes, Sequelize } = require('sequelize')
+const { DataTypes } = require('sequelize')
 const { connection } = require('../../db/index.js')
 
 const ClothingItem = connection.define('clothingItem', {
@@ -25,7 +25,7 @@ const ClothingItem = connection.define('clothingItem', {
   },
   creation_date: {
     type: DataTypes.DATE,
-    defaultValue: Sequelize.literal('CURRENT TIMESTAMP')
+    defaultValue: DataTypes.NOW
   }
 },
   {

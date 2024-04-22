@@ -1,15 +1,16 @@
-
-
-import './App.css'
+import { RouterProvider } from "react-router-dom";
+import { HomePage } from "./pages";
+import { router } from "./router";
+import "./App.css";
 
 function App() {
-  
-
   return (
     <>
-      <h1>Home</h1>
+      <RouterProvider router={router}>
+        <HomePage />
+      </RouterProvider>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

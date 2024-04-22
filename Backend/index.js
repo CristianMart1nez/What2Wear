@@ -4,10 +4,16 @@ const morgan = require('morgan')
 require('dotenv').config()
 
 const { checkConnection, syncModels } = require('./db/index.js')
+const { initializeRelations } = require('./db/relations.js')
 
 async function checkAndSync() {
-    await checkConnection()
-    await syncModels()
+    try {
+        await checkConnection()
+        initializeRelations()
+        await syncModels()
+    } catch (error) {
+        console.log('Error checkAndSync: ', error)
+    }
 }
 
 async function initializeAndListen() {

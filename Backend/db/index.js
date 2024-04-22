@@ -18,7 +18,8 @@ async function checkConnection() {
 
 async function syncModels() {
     try {
-        await connection.sync()
+        await connection.sync({ force: true })
+        console.log('Models added')
     } catch (error) {
         console.log('Error syncModels: ', error)
     }
@@ -26,5 +27,6 @@ async function syncModels() {
 
 module.exports = {
     checkConnection,
+    connection,
     syncModels
 }

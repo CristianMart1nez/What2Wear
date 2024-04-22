@@ -1,0 +1,30 @@
+.prueba {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1, h2, h3, p {
+    font-size: 2rem;
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+h2 {
+    font-family: "Rock Salt", cursive;
+    color: rgb(184, 227, 45);
+}
+
+h3 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+}
+
+p {
+    font-family: "Barlow", sans-serif;
+}

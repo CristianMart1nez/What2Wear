@@ -4,7 +4,7 @@ const morgan = require('morgan')
 require('dotenv').config()
 
 const { checkConnection, syncModels } = require('./db/index.js')
-const { initializeRelations } = require('./db/relations.js')
+const initializeRelations = require('./db/relations.js')
 
 async function checkAndSync() {
     try {

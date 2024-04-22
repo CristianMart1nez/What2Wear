@@ -3,6 +3,13 @@ const cors = require('cors')
 const morgan = require('morgan')
 require('dotenv').config()
 
+const { checkConnection, syncModels } = require('./db/index.js')
+
+async function checkAndSync() {
+    await checkConnection()
+    await syncModels()
+}
+
 async function initializeAndListen() {
     const app = express()
         .use(cors())
@@ -15,6 +22,7 @@ async function initializeAndListen() {
 }
 
 async function startApi() {
+    await checkAndSync()
     initializeAndListen()
 }
 

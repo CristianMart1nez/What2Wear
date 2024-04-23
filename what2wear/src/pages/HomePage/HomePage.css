@@ -1,30 +1,73 @@
 .prueba {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-h1, h2, h3, p {
-    font-size: 2rem;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 h1 {
-    font-size: 4rem;
+  font-family: var(--ff-spartan);
+  font-size: 2.75rem;
+  text-transform: uppercase;
 }
 
 h2 {
-    font-family: "Rock Salt", cursive;
-    color: rgb(184, 227, 45);
+  font-family: "Rock Salt", cursive;
+  color: rgb(184, 227, 45);
+  font-size: 3.5rem;
+
 }
 
 h3 {
-    font-family: "Poppins", sans-serif;
-    font-weight: 400;
+  font-family: var(--ff-spartan);
+  font-size: 2rem;
+  line-height: 1.5;
+  font-weight: 340;
+  text-transform: uppercase;
+}
+h5 {
+  font-size: 1.5rem;
+  letter-spacing: 0.8em;
+  text-transform: uppercase;
+}
+p {
+  font-family: var(--ff-spartan);
+  font-size: 1.5rem;
 }
 
-p {
-    font-family: "Barlow", sans-serif;
+.Main_Frame {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+#img-container {
+  height: 500px;
+  width: 350px;
+  overflow: hidden;
+  background-color: aquamarine;
+}
+
+#img-container img {
+  object-fit: cover;
+  height: 100%;
+}
+
+.btn {
+  height: 60px;
+  width: 450px;
+  background-color: var(--purple);
+  position: relative;
+  top:-4%;
+  left:60%;
+ 
+}
+
+.Personal-Stylist {
+  position: relative;
+  top:5%;
+  left:50%;
+ 
 }

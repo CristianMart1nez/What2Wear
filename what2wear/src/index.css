@@ -1,15 +1,42 @@
 :root {
-  font-family: "EB Garamond", serif;
+  --black:rgb(69,69,69,1) ;
+  --green: rgb(184,227,45);
+  --purple:rgb(233, 10, 181);
+  --ff-spartan:"League Spartan", sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color:var(--black);
+  background-color: white;
 }
 
 html, body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+
+}
+
+#root{
+  display: grid;
+  grid-template-rows: 100px 1fr 100px;
+  grid-template-areas: "header" 
+                        "main" 
+                        "footer";
+}
+
+header {
+  grid-area: header;
+  background-color: aquamarine;
+}
+
+
+main {
+  grid-area: main;
+}
+
+footer {
+  grid-area: footer;
+  background-color: rgb(220, 235, 13);
 }

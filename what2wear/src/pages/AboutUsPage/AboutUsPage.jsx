@@ -2,6 +2,6 @@ import './AboutUsPage.css'
 
 export const AboutUsPage = () => {
   return (
-    <h1>AboutUsPage</h1>
+    <button className='btn'>Create your style now</button>
   )
 }

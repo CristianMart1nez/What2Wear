@@ -1,73 +1,71 @@
-.prueba {
-  width: 100vw;
-  height: 100vh;
+.home-container {
+  width: 90vw;
+  height: 100%;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-}
-
-h1 {
-  font-family: var(--ff-spartan);
-  font-size: 2.75rem;
-  text-transform: uppercase;
+  gap: 8px;
+  margin: 0 auto;
+  position: relative;
 }
 
 h2 {
-  font-family: "Rock Salt", cursive;
-  color: rgb(184, 227, 45);
+  position: absolute;
+  font-family: var(--ff-rock);
+  color: var(--green);
   font-size: 3.5rem;
-
+  top: 48px;
+  right: 48px;
 }
 
-h3 {
-  font-family: var(--ff-spartan);
-  font-size: 2rem;
-  line-height: 1.5;
-  font-weight: 340;
-  text-transform: uppercase;
-}
-h5 {
-  font-size: 1.5rem;
-  letter-spacing: 0.8em;
-  text-transform: uppercase;
-}
-p {
-  font-family: var(--ff-spartan);
-  font-size: 1.5rem;
-}
-
-.Main_Frame {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-#img-container {
-  height: 500px;
-  width: 350px;
+.img-container {
+  height: auto;
+  max-width: 320px;
   overflow: hidden;
-  background-color: aquamarine;
 }
 
-#img-container img {
+.img-container img {
   object-fit: cover;
-  height: 100%;
+  width: 100%;
 }
 
 .btn {
-  height: 60px;
-  width: 450px;
-  background-color: var(--purple);
-  position: relative;
-  top:-4%;
-  left:60%;
- 
+  background-color: var(--green);
+  border: 0 solid #E5E7EB;
+  color: var(--lightblack);
+  font-family: var(--ff-spartan);
+  font-size: 1.4em;
+  font-weight: 600;
+  padding: .75em 3.25em;
+  transform: rotate(-2deg);
 }
 
-.Personal-Stylist {
-  position: relative;
-  top:5%;
-  left:50%;
- 
+.btn:focus {
+  outline: 0;
+}
+
+.btn:after {
+  content: '';
+  position: absolute;
+  border: 1px solid var(--lightblack);
+  bottom: 4px;
+  left: 4px;
+  width: calc(100% - 1px);
+  height: calc(100% - 1px);
+}
+
+/* .btn:hover {
+  transform: rotate(-2deg);
+} */
+
+.btn:hover:after {
+  bottom: 2px;
+  left: 2px;
+}
+
+.btn-home {
+  position: absolute;
+  bottom: 80px;
+  right: 100px;
 }

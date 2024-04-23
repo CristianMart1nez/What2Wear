@@ -1,3 +1,5 @@
+const bcrypt = require('bcrypt')
+
 const User = require('../models/user.model.js')
 
 async function getAllUsers(req, res) {
@@ -28,6 +30,14 @@ async function getOneUser(req, res) {
 
 async function createUser(req, res) {
     try {
+
+        //Password encryption
+
+        const saltRounds = bcrypt.genSaltSync(parseInt(process.env.SALTROUNDS))
+        const hashedPassword = bcrypt.hashSync(req.body.password, saltRounds)
+        req.body.password = hashedPassword
+
+
         const user = await User.create({
             firstName: req.body.firstName,
             email: req.body.email,

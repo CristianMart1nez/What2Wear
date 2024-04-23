@@ -31,13 +31,6 @@ async function getOneUser(req, res) {
 async function createUser(req, res) {
     try {
 
-        //Password encryption
-
-        const saltRounds = bcrypt.genSaltSync(parseInt(process.env.SALTROUNDS))
-        const hashedPassword = bcrypt.hashSync(req.body.password, saltRounds)
-        req.body.password = hashedPassword
-
-
         const user = await User.create({
             firstName: req.body.firstName,
             email: req.body.email,
@@ -46,7 +39,8 @@ async function createUser(req, res) {
 
         return res.status(200).json({
             message: 'User created',
-            user: user
+            firstName: user.name,
+            email: user.email
         })
 
     } catch (error) {

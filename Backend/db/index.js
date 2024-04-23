@@ -18,7 +18,7 @@ async function checkConnection() {
 
 async function syncModels() {
     try {
-        await connection.sync({ force: true })
+        await connection.sync()
         console.log('Models added')
     } catch (error) {
         console.log('Error syncModels: ', error)

@@ -1,11 +1,11 @@
 import { api } from "./config";
 
-export const userRegister = async (body) => {
+export const signUp = async(body) => {
     const {data} = await api.post('auth/register', body)
     return data
 }
 
-export const userLogin = async () => {
+export const login = async () => {
     const {data} = await api.post('auth/login')
     return data
 }

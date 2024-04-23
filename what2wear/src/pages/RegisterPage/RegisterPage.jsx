@@ -1,3 +1,7 @@
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { signUp } from '../../services/auth';
+
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -11,8 +15,6 @@ import Grid from '@mui/material/Grid';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { useState } from 'react';
-import { userRegister } from '../../services/user';
 
 function Copyright(props) {
   return (
@@ -32,6 +34,7 @@ function Copyright(props) {
 const defaultTheme = createTheme();
 
 export function RegisterPage() {
+  const navigate = useNavigate()
 
   const[name, setName] = useState('')
   const[email, setEmail] = useState('')
@@ -41,13 +44,14 @@ export function RegisterPage() {
     event.preventDefault();
     
     try {
-      const response = await userRegister({
-        name: name,
+      const response = await signUp({
+        firstName: name,
         email: email,
         password: password
       }) 
 
-      console.log(response)
+      localStorage.setItem('token', response.token)
+      navigate('/')
 
     } catch (error) {
       console.log('Error Submit: ', error)

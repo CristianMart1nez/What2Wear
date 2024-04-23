@@ -1,3 +1,7 @@
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { login } from '../../services/auth'
+
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -11,8 +15,6 @@ import Grid from '@mui/material/Grid';
 import LoginOutlinedIcon from '@mui/icons-material/LoginOutlined';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { useState } from 'react';
-import { userLogin } from '../../services/user';
 
 function Copyright(props) {
   return (
@@ -33,6 +35,8 @@ const defaultTheme = createTheme();
 
 export function LoginPage() {
 
+  const navigate = useNavigate()
+
   const[email, setEmail] = useState('')
   const[password, setPassword] = useState('')
 
@@ -40,12 +44,13 @@ export function LoginPage() {
     event.preventDefault();
     
     try {
-      const response = await userLogin({
+      const response = await login({
         email: email,
         password: password
       }) 
 
-      console.log(response)
+      localStorage.setItem('token', response.token)
+      navigate('/')
 
     } catch (error) {
       console.log('Error Login: ', error)

@@ -18,9 +18,10 @@ async function checkAndSync() {
 
 async function initializeAndListen() {
     const app = express()
+        .use(express.json())
         .use(cors())
         .use(morgan('dev'))
-        .use(express.json())
+        .use('/api', require('./api/router/index.js'))
         .use(express.static('./public'))
         .listen(process.env.PORT, () => {
             console.log(`Server running on port ${process.env.PORT}`)

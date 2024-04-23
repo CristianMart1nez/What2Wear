@@ -23,6 +23,10 @@ const User = connection.define('user', {
     type: DataTypes.STRING,
     allowNull: false
   },
+  role: {
+    type: DataTypes.ENUM('admin', 'user'),
+    defaultValue: 'user'
+  },
   registration_date: {
     type: DataTypes.DATE,
     defaultValue: DataTypes.NOW

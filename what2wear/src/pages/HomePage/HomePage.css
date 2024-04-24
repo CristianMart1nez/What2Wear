@@ -1,13 +1,21 @@
 .home-container {
   width: 90vw;
   height: 100%;
+  margin: 0 auto;
+  border: 2px solid green;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.images-container {
+  border: 2px solid red;
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   gap: 8px;
-  margin: 0 auto;
-  position: relative;
 }
 
 h2 {
@@ -15,8 +23,10 @@ h2 {
   font-family: var(--ff-rock);
   color: var(--green);
   font-size: 3.5rem;
-  top: 48px;
-  right: 48px;
+  top: -48px;
+  right: 20px;
+/*   background-color: var(--lightblack);
+  padding: 8px 12px; */
 }
 
 .img-container {
@@ -37,7 +47,7 @@ h2 {
   font-family: var(--ff-spartan);
   font-size: 1.4em;
   font-weight: 600;
-  padding: .75em 3.25em;
+  padding: .75rem 3.25rem;
   transform: rotate(-2deg);
 }
 

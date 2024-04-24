@@ -1,0 +1,81 @@
+.home-container {
+  width: 90vw;
+  height: 100%;
+  margin: 0 auto;
+  border: 2px solid green;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.images-container {
+  border: 2px solid red;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+h2 {
+  position: absolute;
+  font-family: var(--ff-rock);
+  color: var(--green);
+  font-size: 3.5rem;
+  top: -48px;
+  right: 20px;
+/*   background-color: var(--lightblack);
+  padding: 8px 12px; */
+}
+
+.img-container {
+  height: auto;
+  max-width: 320px;
+  overflow: hidden;
+}
+
+.img-container img {
+  object-fit: cover;
+  width: 100%;
+}
+
+.btn {
+  background-color: var(--green);
+  border: 0 solid #E5E7EB;
+  color: var(--lightblack);
+  font-family: var(--ff-spartan);
+  font-size: 1.4em;
+  font-weight: 600;
+  padding: .75rem 3.25rem;
+  transform: rotate(-2deg);
+}
+
+.btn:focus {
+  outline: 0;
+}
+
+.btn:after {
+  content: '';
+  position: absolute;
+  border: 1px solid var(--lightblack);
+  bottom: 4px;
+  left: 4px;
+  width: calc(100% - 1px);
+  height: calc(100% - 1px);
+}
+
+/* .btn:hover {
+  transform: rotate(-2deg);
+} */
+
+.btn:hover:after {
+  bottom: 2px;
+  left: 2px;
+}
+
+.btn-home {
+  position: absolute;
+  bottom: 80px;
+  right: 100px;
+}

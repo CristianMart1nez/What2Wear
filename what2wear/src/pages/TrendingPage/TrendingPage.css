@@ -1,13 +1,13 @@
 .image-card {
     border:1px solid black;
-    height: 40px;
-    width: 40px;
+    height: 100%;
+    width: 50%
 
   }
   
   .img {
     border:1px solid rgb(246, 15, 15);
     height: 40px;
-    width: 40px;
+    width: 60px;
 
   }

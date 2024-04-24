@@ -1,7 +1,7 @@
+import { Clothing } from '../../components/Clothing/Clothing'
 import './MyClosetsPage.css'
 
 export const MyClosetsPage = () => {
   return (
-    <h1>MyClosetsPage</h1>
-  )
-}
+   <Clothing/>
+  )}

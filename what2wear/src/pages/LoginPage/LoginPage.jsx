@@ -44,6 +44,7 @@ export function LoginPage() {
     event.preventDefault();
     
     try {
+      console.log(email)
       const response = await login({
         email: email,
         password: password
@@ -90,7 +91,7 @@ export function LoginPage() {
                   margin="normal"
                   required
                   fullWidth
-                  id="email"
+                  id="email" 
                   label="Email Address"
                   name="email"
                   autoComplete="email"

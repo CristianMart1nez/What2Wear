@@ -1,0 +1,21 @@
+
+.Logo{
+    display: flex;
+    justify-content: center;
+}
+
+.Legal , .Social{
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    font-size: 0.7em;
+    padding-top: 20vh;
+   padding-bottom: 20vh;
+}
+
+.Social li{
+    margin-right: 2vw;
+}
+.Legal li {
+    margin-right: 5vw;
+}

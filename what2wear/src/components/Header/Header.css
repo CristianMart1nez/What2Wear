@@ -1,0 +1,49 @@
+.Header{
+position: fixed;
+}
+
+
+ul li{
+    list-style: none;
+}
+
+.Nav ul{
+    
+    display: flex;
+/*     border: 1px blue solid; */
+  /*   background-color: black; */
+    justify-content: center
+    
+}
+img{
+    width: 15vw;
+
+}
+
+.Nav ul li { 
+    padding: 4vh;
+   font-size: large;
+  
+text-align: center;
+    margin-left: 20px;
+
+   list-style: none;
+/*    border: 1px yellow solid; */
+}
+.Nav ul li a{
+    color: #b8e32d;
+    padding: 1vw
+}
+
+.Login{
+    display: flex;
+    justify-content: center;
+}
+
+.btn-login{
+    margin-left: 20px;
+padding: 20px;
+    border: 1px red solid;
+  
+    background-color: black;
+}

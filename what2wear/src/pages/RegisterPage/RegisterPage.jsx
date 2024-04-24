@@ -65,7 +65,10 @@ export function RegisterPage() {
         password: password
       }) 
 
+      console.log(response)
+
       localStorage.setItem('token', response.token)
+      localStorage.setItem('user', response.firstName)
       navigate(-1)
 
       setName('')

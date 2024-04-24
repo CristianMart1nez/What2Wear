@@ -1,13 +1,24 @@
-.image-card {
-    border:1px solid black;
-    height: 40px;
-    width: 40px;
-
+.card_img{
+    height: auto;
+    width:11vw;
+    background-color: aqua;
+    border: solid var(--lightblack) 1px;
+    position: relative;
+    margin: auto;
+   
   }
+
+  .card_img img{
+    width:11vw
+    
+  }
+.btn-clothing{
+  height: 2.4em;
+  width: 6em;
+  text-transform: uppercase;
+  position: absolute;
+  bottom: 20px;
+  left: 80px;
+  background-color:var(--green)
   
-  .img {
-    border:1px solid rgb(246, 15, 15);
-    height: 40px;
-    width: 40px;
-
-  }
+}

@@ -51,7 +51,11 @@ export function RegisterPage() {
       }) 
 
       localStorage.setItem('token', response.token)
-      navigate('/')
+      navigate(-1)
+
+      setName('')
+      setEmail('')
+      setPassword('')
 
     } catch (error) {
       console.log('Error Submit: ', error)

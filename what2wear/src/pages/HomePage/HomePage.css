@@ -36,6 +36,43 @@ h2 {
   width: 100%;
 }
 
+.img-container.slider {
+  width: 320px;
+  height: 480px;
+  position: relative;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  top: -4px;
+}
+
+.slide-track {
+  display: flex;
+  flex-direction: column;
+  animation: scroll 60s linear infinite;
+}
+
+.slide {
+  height: 480px;
+  width: 320px;
+  display: flex;
+  align-items: center;
+}
+
+.slide img {
+  width: 100%;
+  object-fit: cover;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
 .btn {                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  background-color: var(--green);
   border: 0 solid #E5E7EB;
   color: var(--black);

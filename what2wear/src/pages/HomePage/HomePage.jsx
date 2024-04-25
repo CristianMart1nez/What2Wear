@@ -1,6 +1,12 @@
+import { useEffect } from 'react'
 import './HomePage.css'
 
 export const HomePage = () => {
+
+  useEffect(() => {
+    document.title = "What2Wear"
+  }, [])
+  
   return (
     <section className='home-container'>
       <div className='images-container'>

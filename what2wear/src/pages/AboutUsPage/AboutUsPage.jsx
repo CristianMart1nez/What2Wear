@@ -8,6 +8,10 @@ export const AboutUsPage = () => {
   const [oneClothingData, setOneClothingData] = useState([])
 
   useEffect(() => {
+    document.title = "What2Wear | About"
+  }, [])
+
+  useEffect(() => {
     const allClothingFetch = async() => {
       try {
         const data = await getAllClothing()

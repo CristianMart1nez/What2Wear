@@ -1,6 +1,12 @@
+import { useEffect } from 'react'
 import './TrendingPage.css'
 
 export const TrendingPage = () => {
+
+  useEffect(() => {
+    document.title = "What2Wear | Trending"
+  }, [])
+
   return (
 <>
 <section className='Pagina-trending'> 

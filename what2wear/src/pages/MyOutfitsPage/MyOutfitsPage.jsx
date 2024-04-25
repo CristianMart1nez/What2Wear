@@ -1,6 +1,13 @@
+import { useEffect } from "react";
 import "./MyOutfitsPage.css";
 
 export const MyOutfitsPage = () => {
+
+  useEffect(() => {
+    document.title = "What2Wear | My Outfits"
+  }, [])
+  
+
   return (
     <>
       <section className="myoutfits-container">

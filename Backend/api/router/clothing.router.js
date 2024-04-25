@@ -3,7 +3,7 @@ const {getAllClothings, getOneClothing, createClothing, updateClothing, deleteCl
 const { checkAuth } = require('../middlewares/auth.js')
 
 router.get('/', getAllClothings)
-router.get('/:id', checkAuth, getOneClothing)
+router.get('/:id', getOneClothing)
 router.post('/', createClothing)
 router.put('/:id', updateClothing)
 router.delete('/:id', deleteClothing)

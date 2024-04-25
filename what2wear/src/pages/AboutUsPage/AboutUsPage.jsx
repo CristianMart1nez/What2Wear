@@ -41,6 +41,7 @@ export const AboutUsPage = () => {
           clothingData.map((data) => (
             <article key={data.id}>
             <h1>{data.type}</h1>
+            <img src={data.img_url} />
           </article>
           ))
         )

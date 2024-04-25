@@ -21,7 +21,10 @@ const SignUp = async(req, res) => {
         const payload = { email: req.body.email }
         const token = jwt.sign(payload, process.env.SECRET)
 
-        return res.status(200).json({ token })
+        return res.status(200).json({ 
+            token,
+            firstName: req.body.firstName 
+        })
 
     } catch (error) {
         console.log('Error SignUp: ', error)
@@ -47,7 +50,10 @@ const Login = async(req, res) => {
         if(comparePassword) {
             const payload = { email: user.email }
             const token = jwt.sign(payload, process.env.SECRET)
-            return res.status(200).json({ token })
+            return res.status(200).json({ 
+                token,
+                firstName: user.firstName  
+            })
         } else {
             return res.status(404).json('Incorrect password')
         }

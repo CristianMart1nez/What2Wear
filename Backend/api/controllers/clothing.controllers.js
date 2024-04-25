@@ -15,6 +15,7 @@ async function getAllClothings(req, res) {
 
 async function getOneClothing(req, res) {
     try {
+        console.log(req.params.id)
         const clothing = await Clothing.findByPk(req.params.id)
         if(clothing) {
             return res.status(200).json(clothing)

@@ -41,13 +41,15 @@ h2 {
   width: 100%;
 }
 
-.btn {
-  background-color: var(--green);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                .btn {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  background-color: var(--green);
   border: 0 solid #E5E7EB;
   color: var(--lightblack);
   font-family: var(--ff-spartan);
-  font-size: 1.4em;
-  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 1em;
+  font-weight: 400;
+  letter-spacing: 8px;
   padding: .75rem 3.25rem;
   transform: rotate(-2deg);
 }

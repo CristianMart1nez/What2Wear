@@ -7,6 +7,7 @@ import { MyClosetsPage } from "../pages/MyClosetsPage/MyClosetsPage";
 import { MyOutfitsPage } from "../pages/MyOutfitsPage/MyOutfitsPage";
 import { RegisterPage } from "../pages/RegisterPage/RegisterPage";
 import { AboutUsPage } from "../pages/AboutUsPage/AboutUsPage";
+import { TrendingPage } from "../pages/TrendingPage/TrendingPage";
 
 
 export const router = createBrowserRouter([
@@ -39,7 +40,10 @@ export const router = createBrowserRouter([
                 path:'/about',
                 element: <AboutUsPage />
             },
-
+            {
+                path:'/trending',
+                element: <TrendingPage/>
+            },
         ]
     }
 ])

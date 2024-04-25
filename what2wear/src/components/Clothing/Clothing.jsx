@@ -1,7 +1,16 @@
-import './Item.css'
+import "./Clothing.css";
 
-export const Item = () => {
+export const Clothing = () => {
   return (
-    <h1>Item</h1>
-  )
-}
+    <>
+      <h1>ListItems</h1>
+     <div className="card_img">
+    <img src="./src/assets/images/outfits_sug_img/00085326520-e1.jpg"  alt="" />
+    <button className="btn-clothing">
+      Eligeme
+    </button>
+      </div>
+   
+    </>
+  );
+};

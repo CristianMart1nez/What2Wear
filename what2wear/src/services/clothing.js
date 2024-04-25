@@ -8,4 +8,4 @@ export const getAllClothing = async() => {
 export const getOneClothing = async (id) => {
     const {data} = await api.get(`clothing/${id}`)
     return data
-} 
+}

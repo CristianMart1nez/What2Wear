@@ -8,19 +8,19 @@ export const HomePage = () => {
         <h2>Personal Stylist</h2>
 
         <article className='img-container'>
-          <img src="./src/assets/images/capa.jpg" alt="" />
+          <img src="./src/assets/images/cover_img/cover1.jpg" alt="" />
         </article>
 
         <article className='img-container'>
-          <img src="./src/assets/images/02010817251-a1.jpg" alt="" />
+          <img src="./src/assets/images/cover_img/cover2.jpg" alt="" />
         </article>
 
         <article className='img-container'>
-          <img src="./src/assets/images/13348310070-a1.jpg" alt="" />
+          <img src="./src/assets/images/cover_img/cover3.jpg" alt="" />
         </article>
 
         <article className='img-container'>
-          <img src="./src/assets/images/02551411802-p.jpg" alt="" />
+          <img src="./src/assets/images/cover_img/cover4.jpg" alt="" />
         </article>
 
         <button className='btn btn-home'>Create your style now</button>

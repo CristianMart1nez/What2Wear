@@ -1,49 +1,96 @@
-.Header{
-position: fixed;
+.header{
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-color: var(--white);
 }
 
+.header-container{
+    height: 100%;
+    width: 90%;
+    margin: 0 auto;
+}
 
-ul li{
+.nav-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-container {
+    height: 90%;
+    width: 270px;
+    overflow: hidden;
+    display: flex;
+    place-content: center;
+    position: relative;
+    top: 10px;
+    padding-bottom: 10px;
+}
+
+.logo-container img {
+    width: 100%;
+    height: auto;
+}
+
+.links-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+
+.links-container li {
     list-style: none;
 }
 
-.Nav ul{
-    
+.links-container li a {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    color: var(--black);
+    letter-spacing: 1.5px;
+}
+
+.links-container li:after {
+    display: block;
+    content: '';
+    border-bottom: 3px solid var(--green);
+    transform: scaleX(0);
+    transition: 250ms ease-in-out;
+}
+
+.links-container li:hover:after {
+    transform: scaleX(1);
+}
+
+.btn-login-register-container {
     display: flex;
-/*     border: 1px blue solid; */
-  /*   background-color: black; */
-    justify-content: center
-    
-}
-img{
-    width: 15vw;
-
+    align-items: center;
+    gap: 12px;
 }
 
-.Nav ul li { 
-    padding: 4vh;
-   font-size: large;
-  
-text-align: center;
-    margin-left: 20px;
-
-   list-style: none;
-/*    border: 1px yellow solid; */
-}
-.Nav ul li a{
-    color: #b8e32d;
-    padding: 1vw
+.btn-login {
+    text-decoration: none;
+    text-align: center;
+    transform: rotate(0deg);
+    background-color: var(--green);
+    font-size: 1em;
+    font-weight: 400;
+    padding: .5rem .25rem .5rem 1.25rem;
 }
 
-.Login{
-    display: flex;
-    justify-content: center;
+.btn-register {
+    text-decoration: none;
+    text-align: center;
+    transform: rotate(0deg);
+    background-color: var(--green);
+    font-size: 1em;
+    font-weight: 400;
+    padding: .5rem .25rem .5rem 1.25rem;
 }
 
-.btn-login{
-    margin-left: 20px;
-padding: 20px;
-    border: 1px red solid;
-  
-    background-color: black;
-}
+

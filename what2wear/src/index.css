@@ -13,6 +13,8 @@ body {
   margin: 0;
   padding: 0;
   line-height: 1.5;
+  letter-spacing: 1.5px;
+  font-family: var(--ff-spartan);
   font-weight: 400;
   color: var(--black);
   background-color: var(--white);
@@ -25,14 +27,13 @@ h1, h2, h3, h4, h5, h6, p {
 
 #root{
   display: grid;
-  grid-template-rows: 60px 1fr 60px;
+  grid-template-rows: 6.5rem 1fr 5rem;
   grid-template-areas:  "header" 
                         "main" 
                         "footer";
   justify-content: space-between;
   height: 100vh;
   width: 100vw;
-
 }
 
 header {

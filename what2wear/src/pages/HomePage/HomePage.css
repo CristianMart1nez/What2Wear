@@ -44,7 +44,7 @@ h2 {
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 .btn {
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   background-color: var(--green);
   border: 0 solid #E5E7EB;
-  color: var(--lightblack);
+  color: var(--black);
   font-family: var(--ff-spartan);
   text-transform: uppercase;
   font-size: 1em;

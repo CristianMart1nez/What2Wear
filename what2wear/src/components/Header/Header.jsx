@@ -1,29 +1,38 @@
-import './Header.css'
-
+import { Link } from "react-router-dom";
+import "./Header.css";
 
 export const Header = () => {
   return (
-    <header className='Header'>
-  
-      <nav className='Nav'>
-        
-        <ul>
-        <img src='./src/assets/What_2_Wear.svg'/>
-          <li><a href='/'>HOME</a></li>
-          <li><a href='/about'>ABOUT</a></li>
-          <li><a href='/closet'>CLOSET</a></li>
-          <li><a href='/myoutfit'>MYOUTFIT</a></li>
-          <li><a href='trending'>TRENDING</a></li>
-         
-        </ul>
+    <header className="header">
+      <div className="header-container">
+        <nav className="nav-container">
+          <div className="logo-container">
+            <img src="./src/assets/What_2_Wear.svg" />
+          </div>
 
-      </nav>
-      <div className='Login'>
-        <button onClick="/login">Log In</button>
-       <button onClick='/register'>Sign Up</button>
-        </div>
+          <ul className="links-container">
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/about">About</Link>
+            </li>
+            <li>
+              <Link to="/closet">Closet</Link>
+            </li>
+            <li>
+              <Link to="/outfits">MyOutfits</Link>
+            </li>
+            <li>
+              <Link to="/trending">Trending</Link>
+            </li>
+          </ul>
+
+          <div className="btn-login-register-container">
+            <Link to="/login" className="btn btn-login">Log In</Link>
+          </div>
+        </nav>
+      </div>
     </header>
- 
-
-  )
-}
+  );
+};

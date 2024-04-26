@@ -26,6 +26,9 @@ const ClothingItem = connection.define('clothingItem', {
   creation_date: {
     type: DataTypes.DATE,
     defaultValue: DataTypes.NOW
+  },
+  collection: {
+    type: DataTypes.STRING
   }
 },
   {

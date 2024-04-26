@@ -18,7 +18,7 @@ export const AboutUsPage = () => {
         setClothingData(data)
       } catch (error) {
         console.log('Error clothing data: ', error)
-      }
+      } 
     }
 
     allClothingFetch()

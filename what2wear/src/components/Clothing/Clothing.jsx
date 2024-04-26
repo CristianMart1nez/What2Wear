@@ -31,7 +31,11 @@ export const Clothing = ({ clothing, addItem }) => {
         <div className="card-closet-info-container">
           <div className="info-container">
             <p style={{ textTransform: 'uppercase'}}>{clothing.brand}</p>
-            <p>{clothing.collection}</p>
+            {
+              clothing.collection 
+              ? (<p>{clothing.collection}</p>)
+              : (<p>Summer 24</p>)
+            }
           </div>
           {
             saved 

@@ -35,7 +35,7 @@
   width: 100%;
   height: auto;
   object-fit: contain;
-  transform: scale(1);
+  transform: scale(0.8);
   margin-top: 12px;
 }
 

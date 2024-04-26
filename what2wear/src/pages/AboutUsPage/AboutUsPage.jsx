@@ -34,7 +34,7 @@ export const AboutUsPage = () => {
       }
     }
 
-    oneClothingFetch(7)
+    oneClothingFetch()
   }, [])
 
   return (

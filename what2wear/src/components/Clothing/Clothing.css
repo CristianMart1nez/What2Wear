@@ -1,6 +1,6 @@
 .card_img{
     height: auto;
-    width:11vw;
+    width:8vw;
     background-color: aqua;
     border: solid var(--lightblack) 1px;
     position: relative;
@@ -9,16 +9,19 @@
   }
 
   .card_img img{
-    width:11vw
+    width:8vw
     
   }
 .btn-clothing{
   height: 2.4em;
   width: 6em;
-  text-transform: uppercase;
+  padding: auto;
   position: absolute;
   bottom: 20px;
-  left: 80px;
+  left: 92px;
   background-color:var(--green)
   
+  
 }
+
+

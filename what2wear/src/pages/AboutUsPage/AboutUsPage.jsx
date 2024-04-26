@@ -14,7 +14,7 @@ export const AboutUsPage = () => {
   useEffect(() => {
     const allClothingFetch = async() => {
       try {
-        const data = await getAllClothing()
+        const data = await getAllClothing() 
         setClothingData(data)
       } catch (error) {
         console.log('Error clothing data: ', error)

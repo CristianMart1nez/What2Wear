@@ -52,7 +52,9 @@ export const HomePage = () => {
             <div className="slide">
               <img src="./src/assets/images/Fotos-rotativas/Foto-rotativa-3.png" alt="" />
             </div>
-
+            <div className="slide">
+              <img src="./src/assets/images/Fotos-rotativas/Foto-rotativa-1.png" alt="" />
+            </div>
           </div>
 
         </article>

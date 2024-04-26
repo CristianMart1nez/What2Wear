@@ -17,7 +17,7 @@ export const TrendingPage = () => {
   return (
     <div className="container-scroll-animation">
       <section className="one">
-        <h1>First Image</h1>
+        <img src="./src/assets/images/trending/trending-2.jpg" alt="" />
       </section>
       <section className="two">
         <h1>Second Image</h1>

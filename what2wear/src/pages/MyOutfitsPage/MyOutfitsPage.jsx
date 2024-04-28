@@ -15,7 +15,18 @@ export const MyOutfitsPage = () => {
     }
   }, []);
 
-  console.log(clothingInfo);
+  console.log(clothingInfo)
+
+  const jumpersArr = clothingInfo.filter((clothing) => clothing.type === "jumpers")
+  console.log(jumpersArr[0].type)
+
+  /* const handleClick = () => {
+    if(index === jumpersArr.length -1) {
+      return setIndex(0)
+    } else {
+      setIndex(index + 1)
+    }
+  } */
 
   return (
     <>
@@ -30,80 +41,69 @@ export const MyOutfitsPage = () => {
 
         <article className="outfits-container">
           <div className="final-clothing-1">
-            {clothingInfo.filter((clothing) => clothing.type === "jumpers")
-              .length > 0 ? (
-              clothingInfo
-                .filter((clothing) => clothing.type === "jumpers")
-                .map((clothing) => (
-                  <img key={clothing.key} src={clothing.img_url} alt="" />
-                ))
-            ) : (
-              <img
-                key={1}
-                src="./src/assets/images/outfits_sug_img/clothing1.jpg"
-                alt=""
-              />
-            )}
+
+            {/* <img key={jumpersArr[index].id} src={jumpersArr[index].img_url} alt="" /> */}
+
           </div>
           <div className="final-clothing-2">
-          {clothingInfo.filter((clothing) => clothing.type === "upperparts")
+            {clothingInfo.filter((clothing) => clothing.type === "upperparts")
               .length > 0 ? (
               clothingInfo
                 .filter((clothing) => clothing.type === "upperparts")
                 .map((clothing) => (
-                  <img key={clothing.key} src={clothing.img_url} alt="" />
+                  <img key={clothing.id} src={clothing.img_url} alt="" />
                 ))
             ) : (
               <img
-                key={1}
+                key={1001}
                 src="./src/assets/images/outfits_sug_img/clothing1.jpg"
                 alt=""
               />
             )}
           </div>
           <div className="final-clothing-3">
-          {clothingInfo.filter((clothing) => clothing.type === "dress")
+            {clothingInfo.filter((clothing) => clothing.type === "dress")
               .length > 0 ? (
               clothingInfo
                 .filter((clothing) => clothing.type === "dress")
                 .map((clothing) => (
-                  <img key={clothing.key} src={clothing.img_url} alt="" />
+                  <img key={clothing.id} src={clothing.img_url} alt="" />
                 ))
             ) : (
               <img
-                key={1}
+                key={1002}
                 src="./src/assets/images/outfits_sug_img/clothing1.jpg"
                 alt=""
               />
             )}
           </div>
           <div className="final-clothing-4">
-          {clothingInfo.filter((clothing) => clothing.type === "downparts")
+            {clothingInfo.filter((clothing) => clothing.type === "downparts")
               .length > 0 ? (
               clothingInfo
                 .filter((clothing) => clothing.type === "downparts")
                 .map((clothing) => (
-                  <img key={clothing.key} src={clothing.img_url} alt="" />
+                  <img key={clothing.id} src={clothing.img_url} alt="" />
                 ))
             ) : (
               <img
-                key={1}
+                key={1003}
                 src="./src/assets/images/outfits_sug_img/clothing1.jpg"
                 alt=""
               />
             )}
           </div>
           <div className="final-clothing-5">
-          {clothingInfo.filter((clothing) => clothing.type === "shoes")
+            {clothingInfo.filter((clothing) => clothing.type === "shoes")
               .length > 0 ? (
               clothingInfo
                 .filter((clothing) => clothing.type === "shoes")
                 .map((clothing) => (
-                  <img key={clothing.key} src={clothing.img_url} alt="" />
+                  <img key={clothing.id} src={clothing.img_url} alt="" />
                 ))
             ) : (
               <img
-                key={1}
+                key={1004}
                 src="./src/assets/images/outfits_sug_img/clothing1.jpg"
                 alt=""
               />

@@ -4,12 +4,12 @@ import BookmarkIcon from '@mui/icons-material/Bookmark';
 import PropTypes from 'prop-types'
 import "./Clothing.css";
 
-export const Clothing = ({ clothing, addItem }) => {
+export const Clothing = ({ clothing, addItem, isSaved }) => {
 
   /* TODO: Arreglar la tarjeta. Info-Container FALLO
    */
 
-  const[saved, setSaved] = useState(false)
+  const[saved, setSaved] = useState(isSaved || false)
   
   const handleToggleSaved = (item) => {
     setSaved(!saved)

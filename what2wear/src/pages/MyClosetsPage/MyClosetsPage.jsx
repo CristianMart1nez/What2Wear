@@ -3,8 +3,6 @@ import { Clothing } from "../../components/Clothing/Clothing";
 import { getAllClothing } from "../../services/clothing";
 import "./MyClosetsPage.css";
 
-import images from "../../images.json";
-
 export const MyClosetsPage = () => {
   /* TODO: Poner mejores variables en la función addItem 
     TODO 2: Arreglar renderización localStorage. Un artículo se queda guardado y no se marca visualmente

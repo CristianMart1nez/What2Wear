@@ -3,6 +3,12 @@ import "./MyOutfitsPage.css";
 
 export const MyOutfitsPage = () => {
   const [clothingInfo, setClothingInfo] = useState([]);
+  const [jumpers, setJumpers] = useState([]);
+  const [upperparts, setUpperparts] = useState([]);
+  const [dress, setDress] = useState([]);
+  const [downparts, setDownparts] = useState([]);
+  const [shoes, setShoes] = useState([]);
+  const [index, setIndex] = useState(0);
 
   useEffect(() => {
     document.title = "What2Wear | My Outfits";
@@ -10,23 +16,56 @@ export const MyOutfitsPage = () => {
 
   useEffect(() => {
     const storedClothingInfo = localStorage.getItem("clothingInfo");
-    if (storedClothingInfo) {
+    if (storedClothingInfo && clothingInfo.length === 0) {
       setClothingInfo(JSON.parse(storedClothingInfo));
     }
-  }, []);
+    setJumpers(clothingInfo.filter((clothing) => clothing.type === "jumpers"));
+    setUpperparts(clothingInfo.filter((clothing) => clothing.type === "upperparts"));
+    setDress(clothingInfo.filter((clothing) => clothing.type === "dress"));
+    setDownparts(clothingInfo.filter((clothing) => clothing.type === "downparts"));
+    setShoes(clothingInfo.filter((clothing) => clothing.type === "shoes"));
+  }, [clothingInfo]);
 
-  console.log(clothingInfo)
-
-  const jumpersArr = clothingInfo.filter((clothing) => clothing.type === "jumpers")
-  console.log(jumpersArr[0].type)
-
-  /* const handleClick = () => {
-    if(index === jumpersArr.length -1) {
-      return setIndex(0)
+  const handleChangeJumpers = () => {
+    if (index === jumpers.length - 1) {
+      return setIndex(0);
     } else {
-      setIndex(index + 1)
+      setIndex(index + 1);
     }
-  } */
+  };
+
+  const handleChangeUpperparts = () => {
+    if (index === jumpers.length - 1) {
+      return setIndex(0);
+    } else {
+      setIndex(index + 1);
+    }
+  };
+
+  const handleChangeDress = () => {
+    if (index === jumpers.length - 1) {
+      return setIndex(0);
+    } else {
+      setIndex(index + 1);
+    }
+  };
+
+  const handleChangeDownparts = () => {
+    if (index === jumpers.length - 1) {
+      return setIndex(0);
+    } else {
+      setIndex(index + 1);
+    }
+  };
+
+  const handleChangeShoes = () => {
+    console.log('aqui')
+    if (index === jumpers.length - 1) {
+      return setIndex(0);
+    } else {
+      setIndex(index + 1);
+    }
+  };
 
   return (
     <>
@@ -41,73 +80,44 @@ export const MyOutfitsPage = () => {
 
         <article className="outfits-container">
           <div className="final-clothing-1">
-
-            {/* <img key={jumpersArr[index].id} src={jumpersArr[index].img_url} alt="" /> */}
-
+            <img
+              key={jumpers[index]?.id}
+              src={jumpers[index]?.img_url}
+              alt=""
+              onClick={handleChangeJumpers}
+            />
           </div>
           <div className="final-clothing-2">
-            {clothingInfo.filter((clothing) => clothing.type === "upperparts")
-              .length > 0 ? (
-              clothingInfo
-                .filter((clothing) => clothing.type === "upperparts")
-                .map((clothing) => (
-                  <img key={clothing.id} src={clothing.img_url} alt="" />
-                ))
-            ) : (
-              <img
-                key={1001}
-                src="./src/assets/images/outfits_sug_img/clothing1.jpg"
-                alt=""
-              />
-            )}
+            <img
+              key={upperparts[index]?.id}
+              src={upperparts[index]?.img_url}
+              alt=""
+              onClick={handleChangeUpperparts}
+            />
           </div>
           <div className="final-clothing-3">
-            {clothingInfo.filter((clothing) => clothing.type === "dress")
-              .length > 0 ? (
-              clothingInfo
-                .filter((clothing) => clothing.type === "dress")
-                .map((clothing) => (
-                  <img key={clothing.id} src={clothing.img_url} alt="" />
-                ))
-            ) : (
-              <img
-                key={1002}
-                src="./src/assets/images/outfits_sug_img/clothing1.jpg"
-                alt=""
-              />
-            )}
+            <img
+              key={dress[index]?.id}
+              src={dress[index]?.img_url}
+              alt=""
+              onClick={handleChangeDress}
+            />
           </div>
           <div className="final-clothing-4">
-            {clothingInfo.filter((clothing) => clothing.type === "downparts")
-              .length > 0 ? (
-              clothingInfo
-                .filter((clothing) => clothing.type === "downparts")
-                .map((clothing) => (
-                  <img key={clothing.id} src={clothing.img_url} alt="" />
-                ))
-            ) : (
-              <img
-                key={1003}
-                src="./src/assets/images/outfits_sug_img/clothing1.jpg"
-                alt=""
-              />
-            )}
+            <img
+              key={downparts[index]?.id}
+              src={downparts[index]?.img_url}
+              alt=""
+              onClick={handleChangeDownparts}
+            />
           </div>
           <div className="final-clothing-5">
-            {clothingInfo.filter((clothing) => clothing.type === "shoes")
-              .length > 0 ? (
-              clothingInfo
-                .filter((clothing) => clothing.type === "shoes")
-                .map((clothing) => (
-                  <img key={clothing.id} src={clothing.img_url} alt="" />
-                ))
-            ) : (
-              <img
-                key={1004}
-                src="./src/assets/images/outfits_sug_img/clothing1.jpg"
-                alt=""
-              />
-            )}
+            <img
+              key={shoes[index]?.id}
+              src={shoes[index]?.img_url}
+              alt=""
+              onClick={handleChangeShoes}
+            />
           </div>
 
           <div className="configure-outfits-container">

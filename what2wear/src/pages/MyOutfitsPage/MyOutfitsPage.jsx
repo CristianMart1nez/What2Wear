@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 import "./MyOutfitsPage.css";
+import { ClothingItem } from "../../components/ClothingItem/ClothingItem";
 
 export const MyOutfitsPage = () => {
+
   const [clothingInfo, setClothingInfo] = useState([]);
   const [jumpers, setJumpers] = useState([]);
   const [upperparts, setUpperparts] = useState([]);
@@ -9,6 +11,7 @@ export const MyOutfitsPage = () => {
   const [downparts, setDownparts] = useState([]);
   const [shoes, setShoes] = useState([]);
   const [index, setIndex] = useState(0);
+  const [indexJumpers, setIndexJumpers] = useState(0)
 
   useEffect(() => {
     document.title = "What2Wear | My Outfits";
@@ -26,24 +29,26 @@ export const MyOutfitsPage = () => {
     setShoes(clothingInfo.filter((clothing) => clothing.type === "shoes"));
   }, [clothingInfo]);
 
+  console.log(jumpers)
+
   const handleChangeJumpers = () => {
-    if (index === jumpers.length - 1) {
-      return setIndex(0);
+    if (indexJumpers === jumpers.length - 1) {
+      return setIndexJumpers(0);
     } else {
-      setIndex(index + 1);
+      setIndexJumpers(indexJumpers + 1);
     }
   };
 
   const handleChangeUpperparts = () => {
-    if (index === jumpers.length - 1) {
+    if (index === upperparts.length - 1) {
       return setIndex(0);
     } else {
       setIndex(index + 1);
     }
   };
 
-  const handleChangeDress = () => {
-    if (index === jumpers.length - 1) {
+  const handleChangeDress = (dress) => {
+    if (index === dress.length - 1) {
       return setIndex(0);
     } else {
       setIndex(index + 1);
@@ -51,7 +56,7 @@ export const MyOutfitsPage = () => {
   };
 
   const handleChangeDownparts = () => {
-    if (index === jumpers.length - 1) {
+    if (index === downparts.length - 1) {
       return setIndex(0);
     } else {
       setIndex(index + 1);
@@ -60,7 +65,7 @@ export const MyOutfitsPage = () => {
 
   const handleChangeShoes = () => {
     console.log('aqui')
-    if (index === jumpers.length - 1) {
+    if (index === shoes.length - 1) {
       return setIndex(0);
     } else {
       setIndex(index + 1);
@@ -80,44 +85,23 @@ export const MyOutfitsPage = () => {
 
         <article className="outfits-container">
           <div className="final-clothing-1">
-            <img
-              key={jumpers[index]?.id}
-              src={jumpers[index]?.img_url}
-              alt=""
-              onClick={handleChangeJumpers}
-            />
+            <ClothingItem clothingType={jumpers} />
           </div>
+
           <div className="final-clothing-2">
-            <img
-              key={upperparts[index]?.id}
-              src={upperparts[index]?.img_url}
-              alt=""
-              onClick={handleChangeUpperparts}
-            />
+            <ClothingItem clothingType={upperparts} />
           </div>
+
           <div className="final-clothing-3">
-            <img
-              key={dress[index]?.id}
-              src={dress[index]?.img_url}
-              alt=""
-              onClick={handleChangeDress}
-            />
+            <ClothingItem clothingType={dress} />
           </div>
+          
           <div className="final-clothing-4">
-            <img
-              key={downparts[index]?.id}
-              src={downparts[index]?.img_url}
-              alt=""
-              onClick={handleChangeDownparts}
-            />
+          <ClothingItem clothingType={downparts} />
           </div>
+
           <div className="final-clothing-5">
-            <img
-              key={shoes[index]?.id}
-              src={shoes[index]?.img_url}
-              alt=""
-              onClick={handleChangeShoes}
-            />
+          <ClothingItem clothingType={shoes} />
           </div>
 
           <div className="configure-outfits-container">

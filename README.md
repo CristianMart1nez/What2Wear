@@ -30,8 +30,8 @@ Join the What2Wear community today and discover a new way to express your style 
 - Wardrobe Organization: Keep your wardrobe organized and clutter-free by digitally cataloging your clothing items. Easily categorize, search, and manage your wardrobe collection.
 
 User Profiles:
-- Admin:
-- User:
+- Admin: Full management and supervision.
+- User: Users can create unique outfits using clothing items, preview them in 'My Outfits', and save them to appear on their profiles.
 ## Mobile design.
 ## Web design
 
@@ -47,5 +47,6 @@ User Profiles:
 - associate multiple items of clothing to a set of clothes
   
 ## Endpoints:
+All Endpoints are located under the path /api/.
 ## User Signup/Login
 ## User Endpoints

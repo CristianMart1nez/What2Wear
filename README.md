@@ -2,7 +2,7 @@
 
 Project_What2Wear
 
-Summary:
+##Summary:
 Project Name: What2Wear
 
 Vision: Simplify the daily clothing choice by providing an intuitive and efficient platform for organizing outfits, saving time, and fostering personal style expression.
@@ -11,7 +11,7 @@ Purpose: The purpose of our application is to free people from the burden of hav
 
 Commitment: We are committed to providing our users with an exceptional experience in every interaction with our application. This means that we strive to maintain high quality standards in terms of design, functionality and customer service. We are committed to continuous improvement, actively listening to our users' feedback and adapting our application to meet their evolving needs. 
 
-About "What2Wear":
+##About "What2Wear":
 What2Wear is your ultimate companion for effortless outfit organization. We understand the daily struggle of deciding what to wear, which is why we've crafted a solution to streamline this process. With What2Wear, you can say goodbye to the endless hours spent rummaging through your wardrobe.
 
 Our platform offers a user-friendly interface designed to make outfit planning both simple and enjoyable. Whether you're preparing for work, a special event, or a casual day out, What2Wear has you covered.
@@ -21,7 +21,7 @@ Explore our curated collection of clothing items, mix and match effortlessly, an
 Join the What2Wear community today and discover a new way to express your style with ease.
 
 
-Our Services:
+##Our Services:
 
 At What2Wear, we offer a range of services tailored to simplify your outfit organization process and enhance your style experience:
 
@@ -35,11 +35,11 @@ User:
 Mobile design.
 Web design
 
-Tables:
+##Tables:
 ![Tables](https://github.com/CristianMart1nez/What2Wear/assets/162847236/29936002-de5a-4a6d-bb41-9a240afcb5bd)
 
 
-Relationships between tables:
-Endpoints:
-User Signup/Login
-User Endpoints
+##Relationships between tables:
+##Endpoints:
+##User Signup/Login
+##User Endpoints

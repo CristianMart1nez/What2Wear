@@ -40,6 +40,12 @@ User Profiles:
 
 
 ## Relationships between tables:
+- A user can have multiple items of clothing in his or her closet
+- Each item of clothing is associated with many users 
+- Each set of clothing is associated with a specific user who created it, except for predefined sets.
+- Each clothing set is associated with a specific user who created it.
+- associate multiple items of clothing to a set of clothes
+  
 ## Endpoints:
 ## User Signup/Login
 ## User Endpoints

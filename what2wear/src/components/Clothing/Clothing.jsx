@@ -6,9 +6,6 @@ import "./Clothing.css";
 
 export const Clothing = ({ clothing, addItem, isSaved }) => {
 
-  /* TODO: Arreglar la tarjeta. Info-Container FALLO
-   */
-
   const[saved, setSaved] = useState(isSaved || false)
   
   const handleToggleSaved = (item) => {
@@ -50,5 +47,6 @@ export const Clothing = ({ clothing, addItem, isSaved }) => {
 
 Clothing.propTypes = {
   clothing: PropTypes.object,
-  addItem: PropTypes.func
+  addItem: PropTypes.func,
+  isSaved: PropTypes.bool
 };

@@ -3,12 +3,12 @@
   height: auto;
   aspect-ratio: 1/1.1;
   border: 1px solid var(--black);
-  background: linear-gradient(180deg, rgba(245,246,250,.5) 0%, #e0dfe280 100%);
 }
 
 .card-closet-container {
+  background: linear-gradient(180deg, rgba(245,246,250,.5) 0%, #e0dfe280 100%);
   width: 100%;
-  height: 90%;
+  height: 100%;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -36,7 +36,7 @@
   height: auto;
   object-fit: contain;
   transform: scale(0.8);
-  margin-top: 12px;
+  margin-top: 8px;
 }
 
 .card-closet-info-container {

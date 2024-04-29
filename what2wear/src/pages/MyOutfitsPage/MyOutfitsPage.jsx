@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import "./MyOutfitsPage.css";
-import { ClothingItem } from "../../components/ClothingItem/ClothingItem";
 
 export const MyOutfitsPage = () => {
   const [clothingInfo, setClothingInfo] = useState([]);
@@ -9,7 +8,6 @@ export const MyOutfitsPage = () => {
   const [dress, setDress] = useState([]);
   const [downparts, setDownparts] = useState([]);
   const [shoes, setShoes] = useState([]);
-  const [index, setIndex] = useState(0);
   const [indexJumpers, setIndexJumpers] = useState(0);
   const [indexUpperparts, setIndexUpperparts] = useState(0);
   const [indexDress, setIndexDress] = useState(0);
@@ -58,7 +56,7 @@ export const MyOutfitsPage = () => {
     if (indexDress === dress.length - 1) {
       return setIndexDress(0);
     } else {
-      setIndexDress(index + 1);
+      setIndexDress(indexDress + 1);
     }
   };
 

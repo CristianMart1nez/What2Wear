@@ -49,5 +49,25 @@ User Profiles:
   
 ## Endpoints:
 All Endpoints are located under the path /api/.
+### User Signup/Login
+
+| METHOD | ENDPOINT          | TOKEN | ROLE | DESCRIPTION              | POST PARAMS                               | RETURNS               |
+|--------|-------------------|-------|------|--------------------------|-------------------------------------------|------------------------|
+| POST   | /register | -     | client | New client Signup           | first_name, email, password | { token: token }       |
+| POST   | /login  | -       | - | User Login            | email, password                           | { token: token }       |
+
+
+### Cloting Endpoints
+
+| METHOD | ENDPOINT         | TOKEN | ROLE | DESCRIPTION              | POST PARAMS                                     | RETURNS               |
+|--------|------------------|-------|------|--------------------------|-------------------------------------------------|------------------------|
+| GET    | /cloting         | NO    | -| Get all cloting           | Query params                                    | [{cloting}]              |
+| GET    | /cloting/:id     | NO    | -| Get one cloting             | -                                               | {cloting}                |
+| POST   | /cloting/:id     | YES   | admin    | Create one cloting         | -                                               | {user}                |
+| PUT    | /cloting         | NO    | -| Get all cloting           | Query params                                    | [{cloting}]              |
+| DELETE | /cloting/:id     | YES   | admin| Delete cloting          | Query params                                    | [{cloting}]              |
+
+
+
 ## User Signup/Login
 ## User Endpoints

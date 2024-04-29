@@ -90,10 +90,50 @@
 
 .configure-outfits-container {
     grid-area: 1/2/6/3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border: 1px solid black;
 }
 
-.configure-outfits-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.outfits-jumpers {
+    position: absolute;
+    width: auto;
+    height: 70%;
+    top: -60px;
+    left: 10px;
+    z-index: 1;
+}
+
+.outfits-upperparts {
+    position: absolute;
+    width: auto;
+    height: 70%;
+    top: -60px;
+    left: 150px;
+    z-index: 2;
+}
+
+.outfits-dress {
+    display: none;
+}
+
+.outfits-downparts {
+
+    position: absolute;
+    width: auto;
+    height: 75%;
+    top: 200px;
+    z-index: 3;
+}
+
+.outfits-shoes {
+    position: absolute;
+    width: auto;
+    height: 30%;
+    top: 500px;
+    left: 70px;
+    z-index: 4;
 }

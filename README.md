@@ -1,7 +1,8 @@
 # PROYECT What2Wear
 
 
-![Web_Photo_Editor](https://github.com/CristianMart1nez/What2Wear/assets/162847236/d67d857d-b18e-437d-ba5d-4f581595cc9c)
+![Untitled Project](https://github.com/CristianMart1nez/What2Wear/assets/162847236/daafb01a-ea29-46bb-8ddd-b579bec40e16)
+
 
 
 ## Summary:

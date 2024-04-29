@@ -1,4 +1,12 @@
-.container-5items{
-    display: flex;
+.closetpage-container {
+    width: 90vw;
+    height: 90vh;
+    margin: 0 auto;
+}
 
+.closetpage-grid-container {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(180px, 1fr));
 }

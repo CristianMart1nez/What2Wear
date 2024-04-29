@@ -39,9 +39,24 @@ export function RegisterPage() {
   const[name, setName] = useState('')
   const[email, setEmail] = useState('')
   const[password, setPassword] = useState('')
+  const[errorName, setErrorName] = useState(false)
+  const[errorEmail, setErrorEmail] = useState(false)
+  const[errorPassword, setErrorPassword] = useState(false)
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+
+    if(name.trim() === '') {
+      setErrorName(true)
+    }
+
+    if(email.trim() === '') {
+      setErrorEmail(true)
+    }
+
+    if(password.trim() === '') {
+      setErrorPassword(true)
+    }
     
     try {
       const response = await signUp({
@@ -50,24 +65,63 @@ export function RegisterPage() {
         password: password
       }) 
 
+      console.log(response)
+
       localStorage.setItem('token', response.token)
-      navigate('/')
+      localStorage.setItem('user', response.firstName)
+      navigate(-1)
+
+      setName('')
+      setEmail('')
+      setPassword('')
+
+      console.log('enviado')
 
     } catch (error) {
       console.log('Error Submit: ', error)
     }
   };
 
+  const handleBlurName = () => {
+    if(name.trim() === '') {
+      setErrorName(true)
+    }
+  }
+
+  const handleBlurEmail = () => {
+    if(email.trim() === '') {
+      setErrorEmail(true)
+    }
+  }
+
+  const handleBlurPassword = () => {
+    if(password.trim() === '') {
+      setErrorPassword(true)
+    }
+  }
+
   const handleName = (event) => {
     setName(event.target.value)
+
+    if(event.target.value.length !== 0) {
+      setErrorName(false)
+    } 
   }
 
   const handleEmail = (event) => {
     setEmail(event.target.value)
+
+    if(event.target.value.length !== 0) {
+      setErrorEmail(false)
+    } 
   }
 
   const handlePassword = (event) => {
     setPassword (event.target.value)
+
+    if(event.target.value.length !== 0) {
+      setErrorPassword(false)
+    } 
   }
 
   return (
@@ -115,6 +169,9 @@ export function RegisterPage() {
                 autoComplete="name"
                 autoFocus
                 onChange={(event) => handleName(event)}
+                onBlur={handleBlurName}
+                error={errorName}
+                helperText={errorName ? 'Required field': ''}
               />
               <TextField
                 margin="normal"
@@ -125,6 +182,9 @@ export function RegisterPage() {
                 name="email"
                 autoComplete="email"
                 onChange={(event) => handleEmail(event)}
+                onBlur={handleBlurEmail}
+                error={errorEmail}
+                helperText={errorEmail ? 'Required field': ''}
 
               />
               <TextField
@@ -137,7 +197,9 @@ export function RegisterPage() {
                 id="password"
                 autoComplete="current-password"
                 onChange={(event) => handlePassword (event)}
-
+                onBlur={handleBlurPassword}
+                error={errorPassword}
+                helperText={errorPassword ? 'Required field': ''}
               />
               <FormControlLabel
                 control={<Checkbox value="remember" color="primary" />}

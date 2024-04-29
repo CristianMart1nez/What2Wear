@@ -39,9 +39,19 @@ export function LoginPage() {
 
   const[email, setEmail] = useState('')
   const[password, setPassword] = useState('')
+  const[errorEmail, setErrorEmail] = useState(false)
+  const[errorPassword, setErrorPassword] = useState(false)
 
   const handleSubmit = async (event) => {
-    event.preventDefault();
+    event.preventDefault()
+
+    if(email.trim() === '') {
+      setErrorEmail(true)
+    }
+
+    if(password.trim() === '') {
+      setErrorPassword(true)
+    }
     
     try {
       const response = await login({
@@ -50,19 +60,43 @@ export function LoginPage() {
       }) 
 
       localStorage.setItem('token', response.token)
-      navigate('/')
+      localStorage.setItem('user', response.firstName)
+      navigate(-1)
+
+      setEmail('')
+      setPassword('')
 
     } catch (error) {
       console.log('Error Login: ', error)
     }
-  };
+  }
+
+  const handleBlurEmail = () => {
+    if(email.trim() === '') {
+      setErrorEmail(true)
+    }
+  }
+
+  const handleBlurPassword = () => {
+    if(password.trim() === '') {
+      setErrorPassword(true)
+    }
+  }
 
   const handleEmail = (event) => {
     setEmail(event.target.value)
+
+    if(event.target.value.length !== 0) {
+      setErrorEmail(false)
+    } 
   }
 
   const handlePassword = (event) => {
     setPassword (event.target.value)
+
+    if(event.target.value.length !== 0) {
+      setErrorPassword(false)
+    } 
   }
 
   return (
@@ -90,12 +124,14 @@ export function LoginPage() {
                   margin="normal"
                   required
                   fullWidth
-                  id="email"
+                  id="email" 
                   label="Email Address"
                   name="email"
                   autoComplete="email"
                   onChange={(event) => handleEmail(event)}
-  
+                  onBlur={handleBlurEmail}
+                  error={errorEmail}
+                  helperText={errorEmail ? 'Required field': ''}
                 />
                 <TextField
                   margin="normal"
@@ -107,7 +143,9 @@ export function LoginPage() {
                   id="password"
                   autoComplete="current-password"
                   onChange={(event) => handlePassword (event)}
-  
+                  onBlur={handleBlurPassword}
+                  error={errorPassword}
+                  helperText={errorPassword ? 'Required field': ''}
                 />
                 <FormControlLabel
                   control={<Checkbox value="remember" color="primary" />}

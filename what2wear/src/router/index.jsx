@@ -29,7 +29,7 @@ export const router = createBrowserRouter([
                 element: <RegisterPage />
             },
             {
-                path:'/closets',
+                path:'/closet',
                 element: <MyClosetsPage />
             },
             {

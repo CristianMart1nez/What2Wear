@@ -15,19 +15,35 @@ export const TrendingPage = () => {
   }, []);
 
   return (
-    <div className="container-scroll-animation">
-      <section className="one">
-        <img src="./src/assets/images/trending/trending-2.jpg" alt="" />
-      </section>
-      <section className="two">
-        <h1>Second Image</h1>
-      </section>
-      <section className="three">
-        <h1>Three Image</h1>
-      </section>
-      <section className="four">
-        <h1>Four Image</h1>
-      </section>
+
+    <section className='trending-container'>
+    <div className='trending-images-container'>
+      <h2>SO COOL! CHECK OUR WHAT IS TRENDIND!!</h2>
+
+      <article className='trending-img-container2'>    
+      <img src="/src/assets/images/trending/02879482808-p.jpg" alt="" />
+      <img src="./src/assets/images/trending/02906204330-p.jpg" alt=""/>
+      </article>
+
+      <article className='trending-img-container2'>
+      <img src="./src/assets/images/trending/08741062711-015-p.jpg" alt=""/>
+      <img src="./src/assets/images/trending/00881332800-a1.jpg" alt="" />
+
+ </article>
+
+ <article className='trending-img-container2'>    
+ <img src="./src/assets/images/trending/03203722044-p.jpg" alt="" />
+     <img src="./src/assets/images/trending/02565098330-p.jpg" alt="" />
+ </article>
+
+      <article className='trending-img-container2'>
+     <img src="./src/assets/images/trending/2457806330_1_1_1.jpg"  alt="" />
+     <img src="./src/assets/images/trending/09878100330-p.jpg" alt="" />
+
+</article>
+
     </div>
-  );
+
+  </section> )
 }
+ 

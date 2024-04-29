@@ -1,30 +1,33 @@
-.one, .two, .three, .four {
-  height: 100vh;
+.trending-container {
+  width: 100vw;
+  height: 100%;
+  margin: 0 auto;
   display: flex;
-  justify-content: center;
   align-items: center;
-  color: white;
-  scroll-snap-align: start;
+  justify-content: center;
 }
 
-.container-scroll-animation {
-  scroll-snap-type: y mandatory;
-  overflow-y: scroll;
-  height: 100vh;
-  scroll-padding: 100px;
-}
+  
+  .trending-img-container2 img {
+    object-fit: cover;
+    width: 50%;
+  }
+  h2 {
+    position: absolute;
+    font-family: var(--ff-rock);
+    color: var(--green);
+    font-size: 3.5rem;
+    top: -60px;
+    right: 20px;
+  }
+  
+  h3 {
+    font-family: var(--ff-rock);
+    color: var(--black);
+    font-size: 1rem;
+    padding: 8px 12px;
+  }
 
-.one {
-  background-color: lightblue;
-}
-
-.two {
-  background-color: lightcoral;
-}
-
-.three {
-  background-color: lightgoldenrodyellow;
-}
 
 .four {
   background-color: lightgreen;

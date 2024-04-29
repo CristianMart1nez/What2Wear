@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import "./MyOutfitsPage.css";
+import { favouriteOutfit } from "../../services/outfit";
 
 export const MyOutfitsPage = () => {
   const [clothingInfo, setClothingInfo] = useState([]);
@@ -77,6 +79,20 @@ export const MyOutfitsPage = () => {
     }
   };
 
+  const handleSaved = () => {
+    const body = [jumpers[indexJumpers]?.img_url];
+
+    const fetchData = async () => {
+      try {
+        const data = await favouriteOutfit(body);
+        console.log(data);
+      } catch (error) {
+        console.log("Error handleSaved :", error);
+      }
+    }
+
+    fetchData()
+  }
   return (
     <>
       <section className="myoutfits-container">
@@ -135,11 +151,21 @@ export const MyOutfitsPage = () => {
           </div>
 
           <div className="configure-outfits-container">
-            <img src={jumpers[indexJumpers]?.img_url} className="outfits-jumpers"/>
-            <img src={upperparts[indexUpperparts]?.img_url} className="outfits-upperparts"/>
-            <img src={dress[indexDress]?.img_url} className="outfits-dress"/>
-            <img src={downparts[indexDownparts]?.img_url} className="outfits-downparts"/>
-            <img src={shoes[indexShoes]?.img_url} className="outfits-shoes"/>
+            <img
+              src={jumpers[indexJumpers]?.img_url}
+              className="outfits-jumpers"
+            />
+            <img
+              src={upperparts[indexUpperparts]?.img_url}
+              className="outfits-upperparts"
+            />
+            <img src={dress[indexDress]?.img_url} className="outfits-dress" />
+            <img
+              src={downparts[indexDownparts]?.img_url}
+              className="outfits-downparts"
+            />
+            <img src={shoes[indexShoes]?.img_url} className="outfits-shoes" />
+            <FavoriteBorderIcon onClick={handleSaved} />
           </div>
         </article>
       </section>

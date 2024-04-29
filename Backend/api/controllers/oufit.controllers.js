@@ -29,7 +29,7 @@ async function getOneOutfit(req, res) {
 async function createOutfit(req, res) {
     try {
         const outfit = await Outfit.create({
-            tag:req.body.tag,
+            favouriteOutfit: req.body
         })
 
         return res.status(200).json({

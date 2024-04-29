@@ -17,7 +17,7 @@ What2Wear is your ultimate companion for effortless outfit organization. We unde
 
 Our platform offers a user-friendly interface designed to make outfit planning both simple and enjoyable. Whether you're preparing for work, a special event, or a casual day out, What2Wear has you covered.
 
-Explore our curated collection of clothing items, mix and match effortlessly, and save your favorite combinations for future reference. With smart features like personalized recommendations and weather-based suggestions, What2Wear ensures that you always look and feel your best, no matter the occasion.
+Explore our curated collection of clothing items, mix and match effortlessly, and save your favorite combinations for future reference. What2Wear ensures that you always look and feel your best, no matter the occasion.
 
 Join the What2Wear community today and discover a new way to express your style with ease.
 

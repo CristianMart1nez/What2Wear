@@ -22,7 +22,8 @@ Mobile design.
 Web design
 
 Tables:
-![What_2_Wear](https://github.com/CristianMart1nez/What2Wear/assets/162847236/0fc5080d-841f-4b9e-9070-e121f06c7097)
+![Tables](https://github.com/CristianMart1nez/What2Wear/assets/162847236/29936002-de5a-4a6d-bb41-9a240afcb5bd)
+
 
 Relationships between tables:
 Endpoints:

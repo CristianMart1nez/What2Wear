@@ -61,13 +61,32 @@ All Endpoints are located under the path /api/.
 
 | METHOD | ENDPOINT         | TOKEN | ROLE | DESCRIPTION              | POST PARAMS                                     | RETURNS               |
 |--------|------------------|-------|------|--------------------------|-------------------------------------------------|------------------------|
-| GET    | /cloting         | NO    | -| Get all cloting           | Query params                                    | [{cloting}]              |
-| GET    | /cloting/:id     | NO    | -| Get one cloting             | -                                               | {cloting}                |
-| POST   | /cloting/:id     | YES   | admin    | Create one cloting         | -                                               | {user}                |
-| PUT    | /cloting         | NO    | -| Get all cloting           | Query params                                    | [{cloting}]              |
-| DELETE | /cloting/:id     | YES   | admin| Delete cloting          | Query params                                    | [{cloting}]              |
+| GET    | /cloting         | NO    | -    | Get all cloting          | Query params                                    | [{cloting}]            |
+| GET    | /cloting/:id     | NO    | -    | Get one cloting          | -                                               | {cloting}              |
+| POST   | /cloting/:id     | YES   | admin| Create one cloting       | -                                               | {user}                 |
+| PUT    | /cloting         | NO    | -    | Get all cloting          | Query params                                    | [{cloting}]            |
+| DELETE | /cloting/:id     | YES   | admin| Delete cloting           | Query params                                    | [{cloting}]            |
 
+### Outfit Endpoints
 
+| METHOD | ENDPOINT         | TOKEN | ROLE | DESCRIPTION              | POST PARAMS                                     | RETURNS               |
+|--------|------------------|-------|------|--------------------------|-------------------------------------------------|------------------------|
+| GET    | /outfit         | YES    | user - admin| Get all outfits          | Query params                                    | [{outfit}]      |
+| GET    | /outfit/:id     | YES    | user - admin| Get one outfits          | -                                               | {outfit}        |
+| POST   | /outfit/:id     | YES    | user - admin| Create one outfits       | -                                               | {outfit}        |
+| PUT    | /outfit         | YES    | user - admin| Get all outfits          | Query params                                    | [{outfit}]      |
+| DELETE | /outfit/:id     | YES    | user - admin| Delete outfits           | Query params                                    | [{outfit}]      |
 
-## User Signup/Login
-## User Endpoints
+### User Endpoints
+
+| METHOD | ENDPOINT         | TOKEN | ROLE | DESCRIPTION              | POST PARAMS                                     | RETURNS               |
+|--------|------------------|-------|------|--------------------------|-------------------------------------------------|------------------------|
+| GET    | /user            | YES   | admin| Get all users            | Query params                                    | [{user}]               |
+| GET    | /user/:id        | YES   | admin| Get one user             | -                                               | {user}                 |
+| GET    | /user/profile    | YES   | -    | Get own profile          | -                                               | {user}                 |
+| POST   | /user            | YES   | admin| Create one user          | first_name, email, password, role               | {user}                 |
+| PUT    | /user/:id        | YES   | admin| Update one user          | first_name, email, password, role               | {message: "User updated!"} |
+| PUT    | /user/profile    | YES   | -    | Update user profile (client and developer only update own profile)         | first_name, email, password, role | {message: "Profile updated!"} |
+| PUT    | /user/profile/password| YES   | -    | Reset user password (client and developer only reset own password)         | newPassword | {message: "Password updated!"} |
+| DELETE | /user/:id        | YES   | admin | Delete one user          | -                                               | {message: "User deleted!"} |
+| DELETE | /user/profile    | YES   | -    | Delete user profile (client and developer only delete own profile)         | -     | {message: "Profile deleted!"} |

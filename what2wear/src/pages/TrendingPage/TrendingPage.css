@@ -5,12 +5,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-}
 
-  
+}
   .trending-img-container2 img {
     object-fit: cover;
     width: 50%;
+    margin: 0;
   }
   h2 {
     position: absolute;

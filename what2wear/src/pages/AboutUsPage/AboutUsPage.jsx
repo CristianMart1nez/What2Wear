@@ -1,6 +1,8 @@
-import './AboutPage.css'
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import './AboutUsPage.css'
 
-export const AboutPage = () => {
+export const AboutUsPage = () => {
   return (
     <section className='about-container'>
       <div className='about-images-container'>

@@ -17,7 +17,7 @@ export const MyOutfitsPage = () => {
   const [indexShoes, setIndexShoes] = useState(0);
 
   useEffect(() => {
-    document.title = "What2Wear | My Outfits";
+    document.title = "What2Wear | My Outfits"; 
   }, []);
 
   useEffect(() => {

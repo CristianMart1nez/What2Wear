@@ -14,3 +14,15 @@ export const getFavouriteOutfit = async(token) => {
     })
     return data
 }
+
+export const deleteOutfitById = async(id) => {
+    const token = localStorage.getItem('token')
+    const {data} = await api.delete(`/outfit/favourite/${id}`, {
+        headers: {
+            Authorization: `${token}`
+        }
+    })
+
+    console.log(data)
+    return data
+}

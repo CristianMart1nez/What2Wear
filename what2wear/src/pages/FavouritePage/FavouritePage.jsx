@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import { getFavouriteOutfit } from "../../services/outfit.js";
-import './FavouritePage.css'
+import { deleteOutfitById, getFavouriteOutfit } from "../../services/outfit.js";
+import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
+import "./FavouritePage.css";
 
 export const FavouritePage = () => {
   const [outfitsData, setOutfitsData] = useState([]);
@@ -22,22 +23,35 @@ export const FavouritePage = () => {
     fetchOutfitData();
   }, []);
 
-  console.log(outfitsData);
+  const handleDeleteOutfit = (id) => {
+    console.log(id)
+    const deleteOutfit = async () => {
+      try {
+        const data = await deleteOutfitById(id);
+        console.log(data);
+      } catch (error) {
+        console.log("Error handleSaved :", error);
+      }
+    };
+
+    deleteOutfit();
+  };
 
   return (
     <section className="favourite-grid-container">
-      {
-      outfitsData.map((outfit) => (
+      {outfitsData.map((outfit) => (
         <div key={outfit.id} className="favourite-outfit-container">
-          {
-          outfit.clothingItems.map((clothingItem) => (
-            <img
-              key={clothingItem.id}
-              src={clothingItem.img_url}
-              alt=""
-              className="clothing-item-image"
-            />
+          {outfit.clothingItems.map((clothingItem) => (
+            <>
+              <img
+                key={clothingItem.id}
+                src={clothingItem.img_url}
+                alt=""
+                className={`clothing-item-image-${clothingItem.type}`}
+              />
+            </>
           ))}
+          <DeleteForeverIcon onClick={() => handleDeleteOutfit(outfit.id)} />
         </div>
       ))}
     </section>

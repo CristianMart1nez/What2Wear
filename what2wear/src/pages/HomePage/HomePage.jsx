@@ -12,7 +12,7 @@ export const HomePage = () => {
       <div className='images-container'>
         <h2>Personal Stylist</h2>
 
-        <article className='img-container slider'>
+        <article className='img-container slider'> 
 
           <div className="slide-track">
 

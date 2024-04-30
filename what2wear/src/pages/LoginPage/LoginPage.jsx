@@ -61,6 +61,7 @@ export function LoginPage() {
 
       localStorage.setItem('token', response.token)
       localStorage.setItem('user', response.firstName)
+      localStorage.setItem('id', response.id)
       navigate(-1)
 
       setEmail('')

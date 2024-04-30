@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
-import "./MyOutfitsPage.css";
+import "./MyOutfitsPage.css"; 
 import { favouriteOutfit } from "../../services/outfit";
 
 export const MyOutfitsPage = () => {
@@ -36,7 +36,6 @@ export const MyOutfitsPage = () => {
     setShoes(clothingInfo.filter((clothing) => clothing.type === "shoes"));
   }, [clothingInfo]);
 
-  console.log(jumpers);
 
   const handleChangeJumpers = () => {
     if (indexJumpers === jumpers.length - 1) {
@@ -71,7 +70,6 @@ export const MyOutfitsPage = () => {
   };
 
   const handleChangeShoes = () => {
-    console.log("aqui");
     if (indexShoes === shoes.length - 1) {
       return setIndexShoes(0);
     } else {
@@ -80,11 +78,19 @@ export const MyOutfitsPage = () => {
   };
 
   const handleSaved = () => {
-    const body = [jumpers[indexJumpers]?.img_url];
+    const outfitData = {
+      userId: localStorage.getItem('id'),
+      clothingIds: [
+        jumpers[indexJumpers]?.id,
+        upperparts[indexJumpers]?.id,
+        downparts[indexJumpers]?.id,
+        shoes[indexJumpers]?.id
+      ]
+    }
 
     const fetchData = async () => {
       try {
-        const data = await favouriteOutfit(body);
+        const data = await favouriteOutfit(outfitData);
         console.log(data);
       } catch (error) {
         console.log("Error handleSaved :", error);
@@ -93,6 +99,7 @@ export const MyOutfitsPage = () => {
 
     fetchData()
   }
+
   return (
     <>
       <section className="myoutfits-container">

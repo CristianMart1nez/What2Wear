@@ -16,6 +16,8 @@ const SignUp = async(req, res) => {
             email: req.body.email,
             password: req.body.password
         })
+
+        console.log(req.body)
         
         //Create JWT
         const payload = { email: req.body.email }
@@ -23,7 +25,8 @@ const SignUp = async(req, res) => {
 
         return res.status(200).json({ 
             token,
-            firstName: req.body.firstName 
+            firstName: req.body.firstName,
+            id: user.id
         })
 
     } catch (error) {
@@ -52,7 +55,8 @@ const Login = async(req, res) => {
             const token = jwt.sign(payload, process.env.SECRET)
             return res.status(200).json({ 
                 token,
-                firstName: user.firstName  
+                firstName: user.firstName,
+                id: user.id  
             })
         } else {
             return res.status(404).json('Incorrect password')

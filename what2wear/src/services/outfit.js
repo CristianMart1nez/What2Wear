@@ -5,3 +5,12 @@ export const favouriteOutfit = async(body) => {
     console.log(data)
     return data 
 }
+
+export const getFavouriteOutfit = async(token) => {
+    const {data} = await api.get('/outfit/favourite', {
+        headers: {
+            Authorization: token
+        }
+    })
+    return data
+}

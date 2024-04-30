@@ -10,8 +10,8 @@ const Outfit = connection.define('outfit', {
     tag: {
       type: DataTypes.STRING
     },
-    favouriteOutfit: {
-      type: DataTypes.ARRAY(DataTypes.STRING),
+    favourite: {
+      type: DataTypes.BOOLEAN,
       defaultValue: false
     },
     creation_date: {

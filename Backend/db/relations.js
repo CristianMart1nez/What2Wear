@@ -10,11 +10,11 @@ const initializeRelations = () => {
         User.hasMany(ClothingItem)
         ClothingItem.belongsTo(User)
 
-        Outfit.belongsToMany(ClothingItem, {through: 'Outfit_ClothingItem'})
+        Outfit.belongsToMany(ClothingItem, {through: 'Outfit_ClothingItem'}) 
         ClothingItem.belongsToMany(Outfit, {through: 'Outfit_ClothingItem'})
     } catch (error) {
         console.log('Error initializeRelations: ', error)
     }
 }
 
-module.exports = initializeRelations
+module.exports = initializeRelations 

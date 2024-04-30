@@ -1,4 +1,6 @@
 const Outfit = require('../models/outfit.model')
+const ClothingItem = require('../models/clothingItem.model')
+const User = require('../models/user.model')
 
 async function getAllOutfits(req, res) {
     try {
@@ -8,7 +10,7 @@ async function getAllOutfits(req, res) {
         } else {
             return res.status(404).send('No outfits found') 
         }
-    } catch (error) {
+    } catch (error) { 
         res.status(500).send(error.message)
     }
 }
@@ -27,9 +29,19 @@ async function getOneOutfit(req, res) {
 }
 
 async function createOutfit(req, res) {
+
+
     try {
         const outfit = await Outfit.create({
-            favouriteOutfit: req.body
+            userId: req.body.userId
+        })
+
+        await req.body.clothingIds.map(async(clothingId) => {
+            const clothingItem = await ClothingItem.findByPk(clothingId)
+
+            if(clothingItem) {
+                await outfit.addClothingItem(clothingItem)
+            }
         })
 
         return res.status(200).json({
@@ -86,10 +98,38 @@ async function deleteOutfit(req, res) {
     }
 }
 
+async function getUserOutfits(req, res) {
+    console.log(req)
+    try {
+        const user = await User.findOne({
+            where: {
+                email: res.locals.user.email
+            },
+            include: [
+                {
+                    model: Outfit,
+                    include: ClothingItem
+                }
+            ]
+        })
+        if(user) {
+            return res.status(200).json(user.outfits)
+        } else {
+            return res.status(404).send('No outfits found') 
+        }
+    } catch (error) { 
+        res.status(500).send(error.message)
+    }
+}
+
+
+
+
 module.exports = {
     getAllOutfits,
     getOneOutfit,
     createOutfit,
     updateOutfit,
     deleteOutfit,
+    getUserOutfits
 }

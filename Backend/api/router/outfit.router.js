@@ -1,5 +1,8 @@
 const router = require('express').Router()
-const {getAllOutfits, getOneOutfit, createOutfit, updateOutfit, deleteOutfit} = require ('../controllers/oufit.controllers.js')
+const {getAllOutfits, getOneOutfit, createOutfit, updateOutfit, deleteOutfit, getUserOutfits} = require ('../controllers/oufit.controllers.js')
+const { checkAuth } = require('../middlewares/auth.js')
+
+router.get('/favourite', checkAuth, getUserOutfits)
 
 router.get('/', getAllOutfits)
 router.get('/:id', getOneOutfit)

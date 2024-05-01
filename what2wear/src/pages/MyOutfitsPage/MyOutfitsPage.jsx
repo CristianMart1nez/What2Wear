@@ -13,19 +13,17 @@ export const MyOutfitsPage = () => {
   const [clothingInfo, setClothingInfo] = useState([]);
   const [jumpers, setJumpers] = useState([]);
   const [upperparts, setUpperparts] = useState([]);
-  const [dress, setDress] = useState([]);
   const [downparts, setDownparts] = useState([]);
   const [shoes, setShoes] = useState([]);
   const [indexJumpers, setIndexJumpers] = useState(0);
   const [indexUpperparts, setIndexUpperparts] = useState(0);
-  const [indexDress, setIndexDress] = useState(0);
   const [indexDownparts, setIndexDownparts] = useState(0);
   const [indexShoes, setIndexShoes] = useState(0);
 
   useEffect(() => {
     document.title = "What2Wear | My Outfits"; 
 
-    if(!isAuthenticated && !token) {
+    if(!isAuthenticated) {
       navigate('/login')
     }
   }, []);
@@ -158,7 +156,6 @@ export const MyOutfitsPage = () => {
               src={upperparts[indexUpperparts]?.img_url}
               className="outfits-upperparts"
             />
-            <img src={dress[indexDress]?.img_url} className="outfits-dress" />
             <img
               src={downparts[indexDownparts]?.img_url}
               className="outfits-downparts"

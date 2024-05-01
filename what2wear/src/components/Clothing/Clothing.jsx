@@ -1,19 +1,27 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
 import BookmarkIcon from '@mui/icons-material/Bookmark';
 import PropTypes from 'prop-types'
 import "./Clothing.css";
+import { AuthContext } from "../../context/Auth/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 export const Clothing = ({ clothing, addItem, isSaved }) => {
 
+  const { isAuthenticated } = useContext(AuthContext)
+  const navigate = useNavigate()
   const[saved, setSaved] = useState(isSaved || false)
   
   const handleToggleSaved = (item) => {
-    setSaved(!saved)
-    addItem(item)
+
+    if(isAuthenticated) {
+      setSaved(!saved)
+      addItem(item)
+    } else {
+      navigate('/login')
+    }
   }
   
-
   return (
     <article className="card-closet">
       <div className="card-closet-container">

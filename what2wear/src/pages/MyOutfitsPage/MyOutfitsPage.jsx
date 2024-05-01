@@ -1,9 +1,15 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import "./MyOutfitsPage.css"; 
 import { favouriteOutfit } from "../../services/outfit";
+import { AuthContext } from "../../context/Auth/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 export const MyOutfitsPage = () => {
+
+  const {isAutheticated} = useContext(AuthContext)
+  const navigate = useNavigate()
+
   const [clothingInfo, setClothingInfo] = useState([]);
   const [jumpers, setJumpers] = useState([]);
   const [upperparts, setUpperparts] = useState([]);
@@ -18,7 +24,13 @@ export const MyOutfitsPage = () => {
 
   useEffect(() => {
     document.title = "What2Wear | My Outfits"; 
+
+    if(!isAutheticated) {
+      navigate('/login')
+    }
   }, []);
+
+  console.log(isAutheticated)
 
   useEffect(() => {
     const storedClothingInfo = localStorage.getItem("clothingInfo");

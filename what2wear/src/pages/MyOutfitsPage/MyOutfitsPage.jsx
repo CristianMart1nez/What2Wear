@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 
 export const MyOutfitsPage = () => {
 
-  const {isAutheticated} = useContext(AuthContext)
+  const {isAuthenticated, token} = useContext(AuthContext)
   const navigate = useNavigate()
 
   const [clothingInfo, setClothingInfo] = useState([]);
@@ -25,12 +25,10 @@ export const MyOutfitsPage = () => {
   useEffect(() => {
     document.title = "What2Wear | My Outfits"; 
 
-    if(!isAutheticated) {
+    if(!isAuthenticated && !token) {
       navigate('/login')
     }
   }, []);
-
-  console.log(isAutheticated)
 
   useEffect(() => {
     const storedClothingInfo = localStorage.getItem("clothingInfo");

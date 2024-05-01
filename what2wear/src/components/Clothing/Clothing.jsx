@@ -21,7 +21,7 @@ export const Clothing = ({ clothing, addItem, isSaved }) => {
       navigate('/login')
     }
   }
-  
+
   return (
     <article className="card-closet">
       <div className="card-closet-container">

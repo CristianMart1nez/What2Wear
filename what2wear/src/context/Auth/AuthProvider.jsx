@@ -3,7 +3,7 @@ import { AuthContext } from './AuthContext';
 
 export const AuthProvider = ({ children }) => {
 
-    const [isAutheticated, setIsAuthenticated] = useState(false)
+    const [isAuthenticated, setIsAuthenticated] = useState(false)
     const [token, setToken] = useState(null)
 
     useEffect(() => {
@@ -19,10 +19,10 @@ export const AuthProvider = ({ children }) => {
         localStorage.setItem('token', response.token)
         localStorage.setItem('user', response.firstName)
         localStorage.setItem('id', response.id)
-        setToken(token)
+        setToken(response.token)
         setIsAuthenticated(true)
     }
-
+    
     const logoutUser = () => {
         localStorage.clear()
         setToken(null)
@@ -31,7 +31,7 @@ export const AuthProvider = ({ children }) => {
 
     return (
         <AuthContext.Provider value={{
-            isAutheticated,
+            isAuthenticated,
             token,
             loginUser,
             logoutUser

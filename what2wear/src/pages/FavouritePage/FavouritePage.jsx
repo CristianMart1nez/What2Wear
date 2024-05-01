@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { deleteOutfitById, getFavouriteOutfit } from "../../services/outfit.js";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import "./FavouritePage.css";
+import { BinIcon } from "../../components/Icons/BinIcon/BinIcon.jsx";
 
 export const FavouritePage = () => {
   const [outfitsData, setOutfitsData] = useState([]);
@@ -24,7 +25,7 @@ export const FavouritePage = () => {
   }, []);
 
   const handleDeleteOutfit = (id) => {
-    const deleteOutfit = async() => {
+    const deleteOutfit = async () => {
 
       try {
         await deleteOutfitById(id);
@@ -39,7 +40,7 @@ export const FavouritePage = () => {
     };
 
     deleteOutfit();
-    
+
   };
 
   return (
@@ -56,7 +57,7 @@ export const FavouritePage = () => {
               />
             </>
           ))}
-          <DeleteForeverIcon onClick={() => handleDeleteOutfit(outfit.id)} />
+          <BinIcon onClick={() => handleDeleteOutfit(outfit.id)}  />
         </div>
       ))}
     </section>

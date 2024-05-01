@@ -24,21 +24,23 @@ export const FavouritePage = () => {
   }, []);
 
   const handleDeleteOutfit = (id) => {
-
     const deleteOutfit = async() => {
 
       try {
-        const data = await deleteOutfitById(id);
-        console.log(data);
+        await deleteOutfitById(id);
+
+        const token = localStorage.getItem('token')
+        const updateData = await getFavouriteOutfit(token)
+        setOutfitsData(updateData)
+
       } catch (error) {
         console.log("Error handleSaved :", error);
       }
     };
 
     deleteOutfit();
+    
   };
-
-  console.log(outfitsData)
 
   return (
     <section className="favourite-grid-container">

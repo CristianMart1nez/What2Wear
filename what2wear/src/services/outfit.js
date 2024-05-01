@@ -19,7 +19,7 @@ export const deleteOutfitById = async(id) => {
     const token = localStorage.getItem('token')
     const {data} = await api.delete(`/outfit/favourite/${id}`, {
         headers: {
-            Authorization: `${token}`
+            Authorization: token
         }
     })
 

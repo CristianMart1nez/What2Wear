@@ -24,8 +24,9 @@ export const FavouritePage = () => {
   }, []);
 
   const handleDeleteOutfit = (id) => {
-    console.log(id)
-    const deleteOutfit = async () => {
+
+    const deleteOutfit = async() => {
+
       try {
         const data = await deleteOutfitById(id);
         console.log(data);

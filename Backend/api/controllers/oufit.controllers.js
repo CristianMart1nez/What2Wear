@@ -77,7 +77,7 @@ async function updateOutfit(req, res) {
     }
 }
 
-async function deleteOutfit(req, res) {
+async function deleteOutfitById(req, res) {
     try {
         const outfit = await Outfit.destroy({
             where: {
@@ -130,6 +130,6 @@ module.exports = {
     getOneOutfit,
     createOutfit,
     updateOutfit,
-    deleteOutfit,
+    deleteOutfitById,
     getUserOutfits
 }

@@ -103,7 +103,7 @@ async function getUserOutfits(req, res) {
     try {
         const user = await User.findOne({
             where: {
-                email: res.locals.user.email
+                email: res.locals.user.email 
             },
             include: [
                 {

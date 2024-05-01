@@ -29,7 +29,6 @@ export const MyOutfitsPage = () => {
     setUpperparts(
       clothingInfo.filter((clothing) => clothing.type === "upperparts")
     );
-    setDress(clothingInfo.filter((clothing) => clothing.type === "dress"));
     setDownparts(
       clothingInfo.filter((clothing) => clothing.type === "downparts")
     );
@@ -50,14 +49,6 @@ export const MyOutfitsPage = () => {
       return setIndexUpperparts(0);
     } else {
       setIndexUpperparts(indexUpperparts + 1);
-    }
-  };
-
-  const handleChangeDress = () => {
-    if (indexDress === dress.length - 1) {
-      return setIndexDress(0);
-    } else {
-      setIndexDress(indexDress + 1);
     }
   };
 
@@ -132,15 +123,6 @@ export const MyOutfitsPage = () => {
 
           <div className="final-clothing-3">
             <img
-              key={dress[indexDress]?.id}
-              src={dress[indexDress]?.img_url}
-              alt=""
-              onClick={handleChangeDress}
-            />
-          </div>
-
-          <div className="final-clothing-4">
-            <img
               key={downparts[indexDownparts]?.id}
               src={downparts[indexDownparts]?.img_url}
               alt=""
@@ -148,7 +130,7 @@ export const MyOutfitsPage = () => {
             />
           </div>
 
-          <div className="final-clothing-5">
+          <div className="final-clothing-4">
             <img
               key={shoes[indexShoes]?.id}
               src={shoes[indexShoes]?.img_url}

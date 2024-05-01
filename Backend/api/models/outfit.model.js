@@ -24,4 +24,4 @@ const Outfit = connection.define('outfit', {
   }
 );
 
-  module.exports = Outfit
+  module.exports = Outfit 

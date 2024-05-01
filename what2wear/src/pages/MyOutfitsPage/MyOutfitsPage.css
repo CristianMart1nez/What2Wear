@@ -25,7 +25,7 @@
     width: 100%;
     min-height: calc(100vh - 240px);
     display: grid;
-    grid-template-rows: repeat(5, 120px);
+    grid-template-rows: repeat(4, 120px);
     grid-template-columns: 120px 500px;
     place-content: center;
     row-gap: 30px;
@@ -89,7 +89,7 @@
 
 
 .configure-outfits-container {
-    grid-area: 1/2/6/3;
+    grid-area: 1/2/5/3;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -102,8 +102,8 @@
     position: absolute;
     width: auto;
     height: 70%;
-    top: -60px;
-    left: 10px;
+    top: -30px;
+    left: 40px;
     z-index: 1;
 }
 
@@ -111,21 +111,16 @@
     position: absolute;
     width: auto;
     height: 70%;
-    top: -60px;
-    left: 150px;
+    top: -30px;
+    left: 180px;
     z-index: 2;
 }
-
-.outfits-dress {
-    display: none;
-}
-
 .outfits-downparts {
 
     position: absolute;
     width: auto;
     height: 75%;
-    top: 200px;
+    top: 160px;
     z-index: 3;
 }
 
@@ -133,7 +128,7 @@
     position: absolute;
     width: auto;
     height: 30%;
-    top: 500px;
-    left: 70px;
+    top: 400px;
+    left: 90px;
     z-index: 4;
 }

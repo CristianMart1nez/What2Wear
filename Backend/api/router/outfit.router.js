@@ -10,4 +10,4 @@ router.post('/', createOutfit)
 router.put('/:id', updateOutfit)
 router.delete('/:id', deleteOutfit)
 
-module.exports = router
+module.exports = router 

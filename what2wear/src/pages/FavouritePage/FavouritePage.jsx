@@ -37,6 +37,8 @@ export const FavouritePage = () => {
     deleteOutfit();
   };
 
+  console.log(outfitsData)
+
   return (
     <section className="favourite-grid-container">
       {outfitsData.map((outfit) => (

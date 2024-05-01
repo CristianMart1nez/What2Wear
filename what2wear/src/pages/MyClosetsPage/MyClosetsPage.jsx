@@ -19,7 +19,7 @@ export const MyClosetsPage = () => {
     const fetchData = async () => {
       try {
         const data = await getAllClothing();
-        setImagesPruebas(data);
+        setImagesPruebas(data.filter((clothing) => clothing.type !== "dress"));
         setClothingFiltered(data)
       } catch (error) {
         console.log("Error fetchDataAllClothing :", error);
@@ -70,7 +70,6 @@ export const MyClosetsPage = () => {
         <button className="closetpage-btn" onClick={(e) => handleFilterType(e.target.textContent.toLowerCase())}>All</button>
         <button className="closetpage-btn" onClick={(e) => handleFilterType(e.target.textContent.toLowerCase())}>Jumpers</button>
         <button className="closetpage-btn" onClick={(e) => handleFilterType(e.target.textContent.toLowerCase())}>Upperparts</button>
-        <button className="closetpage-btn" onClick={(e) => handleFilterType(e.target.textContent.toLowerCase())}>Dress</button>
         <button className="closetpage-btn" onClick={(e) => handleFilterType(e.target.textContent.toLowerCase())}>Downparts</button>
         <button className="closetpage-btn" onClick={(e) => handleFilterType(e.target.textContent.toLowerCase())}>Shoes</button>
       </div>

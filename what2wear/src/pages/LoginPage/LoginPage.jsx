@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../context/Auth/AuthContext';
 import { login } from '../../services/auth'
 
 import Avatar from '@mui/material/Avatar';
@@ -35,6 +36,8 @@ const defaultTheme = createTheme();
 
 export function LoginPage() {
 
+  const{ loginUser } = useContext(AuthContext);
+
   const navigate = useNavigate()
 
   const[email, setEmail] = useState('')
@@ -59,9 +62,7 @@ export function LoginPage() {
         password: password
       }) 
 
-      localStorage.setItem('token', response.token)
-      localStorage.setItem('user', response.firstName)
-      localStorage.setItem('id', response.id)
+      loginUser(response)
       navigate(-1)
 
       setEmail('')

@@ -2,7 +2,6 @@ import { Link, useNavigate } from "react-router-dom";
 import "./Header.css";
 import { useEffect, useState } from "react";
 import { Avatar } from "@mui/material";
-import { HeartIcon } from "../Icons/HeartIcon/HeartIcon";
 import LoginOutlinedIcon from "@mui/icons-material/LoginOutlined";
 import { HeartFillIcon } from "../Icons/HearFillIcon/HeartFillIcon";
 
@@ -72,7 +71,7 @@ export const Header = () => {
                   {firstLetterUppercase}
                 </Avatar>
                 <li>
-                  <Link>
+                  <Link to="/favourite">
                     <HeartFillIcon className="header-heart-icon" />
                   </Link>
                 </li>

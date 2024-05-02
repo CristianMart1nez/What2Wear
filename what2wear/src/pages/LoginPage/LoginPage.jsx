@@ -16,6 +16,7 @@ import Grid from '@mui/material/Grid';
 import LoginOutlinedIcon from '@mui/icons-material/LoginOutlined';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { colors } from '@mui/material';
 
 function Copyright(props) {
   return (
@@ -103,7 +104,7 @@ export function LoginPage() {
 
   return (
     <ThemeProvider theme={defaultTheme}>
-      <Grid container component="main" sx={{ height: '100vh' }}>
+      <Grid container component="main" sx={{ height: '100vh' }} style={{backgroundColor: "#fafafa"}}>
         <CssBaseline />
           <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
             <Box
@@ -115,10 +116,8 @@ export function LoginPage() {
                 alignItems: 'center',
               }}
             >
-              <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-                <LoginOutlinedIcon />
-              </Avatar>
-              <Typography component="h1" variant="h5">
+              
+              <Typography component="h1" variant="h5" style={{fontFamily: "Rock Salt", color: "#b8e32d", fontSize: "2rem"}}>
                 Login
               </Typography>
               <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
@@ -158,17 +157,18 @@ export function LoginPage() {
                   fullWidth
                   variant="contained"
                   sx={{ mt: 3, mb: 2 }}
+                  style={{ backgroundColor: "#b8e32d", color: "#0f0f0f"}}
                 >
                   Login
                 </Button>
                 <Grid container>
                   <Grid item xs>
-                    <Link href="#" variant="body2">
+                    <Link href="#" variant="body2" style={{ color: "#0f0f0f"}}>
                       Forgot password?
                     </Link>
                   </Grid>
                   <Grid item>
-                    <Link href="#" variant="body2">
+                    <Link href="/register" variant="body2" style={{ color: "#0f0f0f"}}>
                       {"Don't have an account? Sign Up"}
                     </Link>
                   </Grid>

@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const api = axios.create({
-    baseURL: 'http://localhost:3000/api',
+    baseURL: 'mysql-what2wear-projectwhat2wear.e.aivencloud.com',
     withCredentials: false,
     headers: {
         Accept: 'application/json',

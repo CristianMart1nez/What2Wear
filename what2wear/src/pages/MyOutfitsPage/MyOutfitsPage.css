@@ -132,3 +132,16 @@
     left: 90px;
     z-index: 4;
 }
+
+.heart-icon {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.heart-icon:hover {
+    transform: scale(1.1);
+}

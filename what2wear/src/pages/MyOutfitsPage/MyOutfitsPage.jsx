@@ -1,13 +1,14 @@
 import { useContext, useEffect, useState } from "react";
-import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import "./MyOutfitsPage.css"; 
 import { favouriteOutfit } from "../../services/outfit";
 import { AuthContext } from "../../context/Auth/AuthContext";
 import { useNavigate } from "react-router-dom";
+import { HeartIcon } from "../../components/Icons/HeartIcon/HeartIcon";
+import { HeartFillIcon } from "../../components/Icons/HearFillIcon/HeartFillIcon";
 
 export const MyOutfitsPage = () => {
 
-  const {isAuthenticated, token} = useContext(AuthContext)
+  const {isAuthenticated} = useContext(AuthContext)
   const navigate = useNavigate()
 
   const [clothingInfo, setClothingInfo] = useState([]);
@@ -19,6 +20,8 @@ export const MyOutfitsPage = () => {
   const [indexUpperparts, setIndexUpperparts] = useState(0);
   const [indexDownparts, setIndexDownparts] = useState(0);
   const [indexShoes, setIndexShoes] = useState(0);
+
+  const[heartActive, setHeartActive] = useState(false)
 
   useEffect(() => {
     document.title = "What2Wear | My Outfits"; 
@@ -45,6 +48,7 @@ export const MyOutfitsPage = () => {
 
 
   const handleChangeJumpers = () => {
+    setHeartActive(false)
     if (indexJumpers === jumpers.length - 1) {
       return setIndexJumpers(0);
     } else {
@@ -53,6 +57,7 @@ export const MyOutfitsPage = () => {
   };
 
   const handleChangeUpperparts = () => {
+    setHeartActive(false)
     if (indexUpperparts === upperparts.length - 1) {
       return setIndexUpperparts(0);
     } else {
@@ -61,6 +66,7 @@ export const MyOutfitsPage = () => {
   };
 
   const handleChangeDownparts = () => {
+    setHeartActive(false)
     if (indexDownparts === downparts.length - 1) {
       return setIndexDownparts(0);
     } else {
@@ -69,6 +75,7 @@ export const MyOutfitsPage = () => {
   };
 
   const handleChangeShoes = () => {
+    setHeartActive(false)
     if (indexShoes === shoes.length - 1) {
       return setIndexShoes(0);
     } else {
@@ -97,6 +104,8 @@ export const MyOutfitsPage = () => {
     }
 
     fetchData()
+
+    setHeartActive(true)
   }
 
   return (
@@ -161,7 +170,12 @@ export const MyOutfitsPage = () => {
               className="outfits-downparts"
             />
             <img src={shoes[indexShoes]?.img_url} className="outfits-shoes" />
-            <FavoriteBorderIcon onClick={handleSaved} />
+            {
+              heartActive 
+              ? (<HeartFillIcon onClick={handleSaved} className="heart-icon heart-romance-icon"/>) 
+              : (<HeartIcon onClick={handleSaved} className="heart-icon"/>)
+            }
+            
           </div>
         </article>
       </section>

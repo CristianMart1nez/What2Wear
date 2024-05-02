@@ -35,12 +35,3 @@
   display: grid;
   grid-template-columns: repeat(5, minmax(180px, 1fr));
 }
-
-.configure-outfits-container svg {
-  position: absolute;
-  bottom: 0px;
-  right: 0px;
-  font-size: 4rem;
-  stroke: black;
-  stroke-width: .020;
-}

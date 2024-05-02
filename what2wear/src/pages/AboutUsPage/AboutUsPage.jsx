@@ -13,7 +13,7 @@ export const AboutUsPage = () => {
             <img src="./src/assets/images/about/samuel.png" alt="" />
           </div>
           <div className="about-info-container">
-            <h3>Samuel Santana Rodriguez</h3>
+            <h3>Samuel Santana</h3>
 
             <div className='about-logo-container'>
               <a href="https://www.linkedin.com/in/madalena-posser-de-andrade-7a40925"><LinkedInIcon /></a>

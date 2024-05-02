@@ -75,14 +75,30 @@
     padding: .5rem .25rem .5rem 1.25rem;
 }
 
-.btn-register {
-    text-decoration: none;
-    text-align: center;
-    transform: rotate(0deg);
+.btn-login-register-container li {
+    list-style: none;
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    border: transparent;
+    border-radius: 100%;
     background-color: var(--green);
-    font-size: 1em;
-    font-weight: 400;
-    padding: .5rem .25rem .5rem 1.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+.header-heart-icon {
+    width: 28px;
+    height: 28px;
+    margin-top: 10px;
+    fill: var(--black);
+}
+
+.header-logout-icon {
+    margin-right: 4px;
+}
+
+
 
 

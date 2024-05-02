@@ -2,23 +2,27 @@ import { Link, useNavigate } from "react-router-dom";
 import "./Header.css";
 import { useEffect, useState } from "react";
 import { Avatar } from "@mui/material";
+import { HeartIcon } from "../Icons/HeartIcon/HeartIcon";
+import LoginOutlinedIcon from "@mui/icons-material/LoginOutlined";
+import { HeartFillIcon } from "../Icons/HearFillIcon/HeartFillIcon";
 
 export const Header = () => {
   const navigate = useNavigate();
   const [isAuthenticate, setIsAuthenticate] = useState(false);
   const [firstLetterUppercase, setFirstLetterUppercase] = useState("");
-  
+
   useEffect(() => {
     const name = localStorage.getItem("user");
     const token = localStorage.getItem("token");
 
     if (token) {
-      setIsAuthenticate(true)
-      setFirstLetterUppercase(name.charAt(0).toUpperCase() + name.charAt(1).toUpperCase())
+      setIsAuthenticate(true);
+      setFirstLetterUppercase(
+        name.charAt(0).toUpperCase() + name.charAt(1).toUpperCase()
+      );
     } else {
       setIsAuthenticate(false);
     }
-    
   });
 
   const handleToggleMenu = () => {
@@ -27,7 +31,7 @@ export const Header = () => {
 
   const handleLogout = () => {
     localStorage.clear();
-    setIsAuthenticate(false)
+    setIsAuthenticate(false);
     navigate("/");
   };
 
@@ -59,25 +63,28 @@ export const Header = () => {
 
           <div className="btn-login-register-container">
             {isAuthenticate ? (
-              <Avatar
-                sx={{ bgcolor: "#b8e32d" }}
-                style={{ cursor: "pointer" }}
-                onClick={handleToggleMenu}
-              >
-                {firstLetterUppercase}
-              </Avatar>
+              <>
+                <Avatar
+                  sx={{ bgcolor: "#b8e32d" }}
+                  style={{ cursor: "pointer" }}
+                  onClick={handleToggleMenu}
+                >
+                  {firstLetterUppercase}
+                </Avatar>
+                <li>
+                  <Link>
+                    <HeartFillIcon className="header-heart-icon" />
+                  </Link>
+                </li>
+                <li onClick={handleLogout}>
+                  <LoginOutlinedIcon className="header-logout-icon" />
+                </li>
+              </>
             ) : (
               <Link to="/login" className="btn btn-login">
                 Log In
               </Link>
             )}
-
-            <div className="profile-menu">
-              <ul>
-                <li><Link to='/favourite'>Favourite</Link></li>
-                <li onClick={handleLogout}>Logout</li>
-              </ul>
-            </div>
           </div>
         </nav>
       </div>

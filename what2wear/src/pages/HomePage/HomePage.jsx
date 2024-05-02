@@ -71,7 +71,7 @@ export const HomePage = () => {
           <img src="./src/assets/images/cover_img/cover4.jpg" alt="" />
         </article>
 
-        <button className='btn btn-home'>Create your style now</button>
+        <a href='/closet'><button className='btn btn-home' >Create your style now</button> </a>
 
       </div>
 
